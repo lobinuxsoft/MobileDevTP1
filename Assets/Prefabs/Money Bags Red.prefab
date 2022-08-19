@@ -1,0 +1,1068 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &101262295757106631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 101262295757107594}
+  m_Layer: 0
+  m_Name: Money Bags Red
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &101262295757107594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101262295757106631}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.67305, y: -6.998047, z: 64.47461}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 101262295756705273}
+  - {fileID: 101262295756705254}
+  - {fileID: 101262295756705172}
+  - {fileID: 101262295756705173}
+  - {fileID: 101262295756705170}
+  - {fileID: 101262295756705171}
+  - {fileID: 101262295756705168}
+  - {fileID: 101262295756705169}
+  - {fileID: 101262295756705182}
+  - {fileID: 101262295756705183}
+  - {fileID: 101262295756705180}
+  - {fileID: 101262295756705181}
+  - {fileID: 101262295756705178}
+  - {fileID: 101262295756705179}
+  - {fileID: 101262295756705176}
+  - {fileID: 101262295756705177}
+  - {fileID: 101262295756705158}
+  - {fileID: 101262295756705159}
+  - {fileID: 101262295756705156}
+  - {fileID: 101262295756705157}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &101262295757100804
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.304405
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 261.44922
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705156 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100805
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.488152
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 261.44922
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705157 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100806
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.304405
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 181.35693
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705158 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100806}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100807
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.488152
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 181.35693
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705159 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100816
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.488152
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 145.83594
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705168 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100816}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100817
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.304405
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 145.83594
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705169 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100818
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.304405
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 89.4707
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705170 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100819
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.488152
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 89.4707
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100820
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.488152
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 25.185547
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705172 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100821
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.304405
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 25.185547
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705173 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100821}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100824
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.488152
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 116.91797
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705176 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100824}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100825
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.304405
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 116.91797
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705177 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100826
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.304405
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 56.3833
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705178 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100827
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.488152
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 56.3833
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705179 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100828
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.488152
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 293.16162
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705180 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100829
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.304405
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 293.16162
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705181 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100829}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100830
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.304405
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 219.39893
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705182 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100831
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.488152
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 219.39893
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705183 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100902
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.488144
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.48876953
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705254 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100902}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &101262295757100921
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 101262295757107594}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_Name
+      value: Money Bags Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.304398
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.938965
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.48876953
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb132ae7734720048833f99facfca9cc, type: 3}
+--- !u!4 &101262295756705273 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb132ae7734720048833f99facfca9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 101262295757100921}
+  m_PrefabAsset: {fileID: 0}
