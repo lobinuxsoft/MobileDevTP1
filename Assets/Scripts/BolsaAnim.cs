@@ -1,17 +1,13 @@
 using UnityEngine;
-using System.Collections;
 
 public class BolsaAnim : MonoBehaviour 
 {
 	public float GiroVel = 1;
 	
 	public Vector3 Amlitud = Vector3.zero;
-	//public float AmplitudVertical = 1;
 	public float VelMov = 1;
 	
 	Vector3 PosIni;
-	Vector3 vAuxPos = Vector3.zero;
-	//float Aumento = 0;
 	bool Subiendo = true;
 	Vector3 vAuxGir = Vector3.zero;
 	
@@ -38,7 +34,7 @@ public class BolsaAnim : MonoBehaviour
 			if(Giro)
 			{
 				vAuxGir = Vector3.zero;
-				vAuxGir.y = T.GetDT() * GiroVel;
+				vAuxGir.y = Time.deltaTime * GiroVel;
 				transform.localEulerAngles += vAuxGir;
 			}
 			
