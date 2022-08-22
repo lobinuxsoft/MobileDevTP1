@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class CarCamera : MonoBehaviour
 {
@@ -19,12 +18,9 @@ public class CarCamera : MonoBehaviour
 	
 	private Vector3 currentVelocity = Vector3.zero;
 	
-	void Start()
-	{
-		raycastLayers = ~ignoreLayers;
-	}
+	void Start() => raycastLayers = ~ignoreLayers;
 
-	void FixedUpdate()
+    void FixedUpdate()
 	{
 		currentVelocity = Vector3.Lerp(prevVelocity, target.root.GetComponent<Rigidbody>().velocity, velocityDamping * Time.deltaTime);
 		currentVelocity.y = 0;
@@ -47,7 +43,7 @@ public class CarCamera : MonoBehaviour
 		if(Physics.Raycast(newTargetPosition, targetDirection, out hit, currentDistance, raycastLayers))
 			newPosition = hit.point;
 		
-		newPosition += transform.forward * LejaniaZ;//diferencia en z agregada por mi
+		newPosition += transform.forward * LejaniaZ;	//diferencia en z agregada por mi
 		
 		transform.position = newPosition;
 		transform.LookAt(newTargetPosition);
