@@ -1,4 +1,5 @@
 using UnityEngine;
+
 public class Visualizacion : MonoBehaviour 
 {
 	public enum Lado{Izq, Der}
