@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class AnimMngDesc : MonoBehaviour 
 {
@@ -11,14 +10,30 @@ public class AnimMngDesc : MonoBehaviour
 	AnimEnCurso AnimAct = AnimMngDesc.AnimEnCurso.Nada;
 	
 	public GameObject PuertaAnimada;
-	
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-	
-	// Update is called once per frame
+
+    public Material[] materials;
+
+    void Start()
+    {
+        if (materials.Length == 9)
+        {
+            Transform door = PuertaAnimada.transform.GetChild(0);
+            
+            door.GetComponent<MeshRenderer>().materials[0] = materials[0];
+            door.GetComponent<MeshRenderer>().materials[1] = materials[1];
+            door.GetComponent<MeshRenderer>().materials[2] = materials[2];
+            door.GetComponent<MeshRenderer>().materials[3] = materials[3];
+
+            door.GetChild(0).GetComponent<MeshRenderer>().materials[0] = materials[4];
+            door.GetChild(1).GetComponent<MeshRenderer>().materials[0] = materials[5];
+            door.GetChild(2).GetComponent<MeshRenderer>().materials[0] = materials[6];
+            door.GetChild(3).GetComponent<MeshRenderer>().materials[0] = materials[7];
+
+            PuertaAnimada.transform.GetChild(1).GetComponent<MeshRenderer>().materials[0] = materials[8];
+        }
+    }
+
+    // Update is called once per frame
 	void Update () 
 	{
 		if(Input.GetKeyDown(KeyCode.Z))
@@ -34,7 +49,6 @@ public class AnimMngDesc : MonoBehaviour
 			{
 				AnimAct = AnimMngDesc.AnimEnCurso.Nada;
 				ContrDesc.FinAnimEntrada();
-				print("fin Anim Entrada");
 			}
 			
 			break;
@@ -45,7 +59,6 @@ public class AnimMngDesc : MonoBehaviour
 			{
 				AnimAct = AnimMngDesc.AnimEnCurso.Nada;
 				ContrDesc.FinAnimSalida();
-				print("fin Anim Salida");
 			}
 			
 			break;
