@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class Deposito2 : MonoBehaviour 
 {
@@ -17,7 +16,7 @@ public class Deposito2 : MonoBehaviour
 	void Start () 
 	{
 		Contr1 = GameObject.Find("ContrDesc1").GetComponent<ControladorDeDescarga>();
-		Contr2 = GameObject.Find("ContrDesc2").GetComponent<ControladorDeDescarga>();
+        Contr2 = GameManager.Instancia.controladorP2;
 		
 		Physics.IgnoreLayerCollision(8,9,false);
 	}
