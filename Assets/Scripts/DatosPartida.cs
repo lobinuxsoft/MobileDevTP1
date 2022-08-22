@@ -1,6 +1,3 @@
-using UnityEngine;
-using System.Collections;
-
 public class DatosPartida 
 {
 	public static float TiempoDeJuego;
