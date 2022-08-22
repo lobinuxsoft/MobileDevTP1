@@ -1,17 +1,16 @@
 using UnityEngine;
-using System.Collections;
 
 public class Aceleracion : MonoBehaviour 
 {
 	public Transform ManoDer;
 	public Transform ManoIzq;
 	
-	public float AlturaMedia = 0;//valor en eje Y que calibra el 0 de cada pedal
+	public float AlturaMedia = 0;	//valor en eje Y que calibra el 0 de cada pedal
 	
 	public float SensAcel = 1;
 	public float SensFren = 1;
 	
-	public Transform Camion;//lo que va a conducir
+	public Transform Camion;	//lo que va a conducir
 	
 	//pedales
 	public Transform PedalAcel;
@@ -51,10 +50,6 @@ public class Aceleracion : MonoBehaviour
 			
 			PedalAcel.localPosition = PAclPosIni - PedalAcel.forward * SensivPed * Acelerado;
 		}
-		else
-		{
-			//PedalFren.localPosition = PAclPosIni;
-		}
 		
 		//frenar
 		if(DifIzq > 0)
@@ -64,10 +59,6 @@ public class Aceleracion : MonoBehaviour
 			Camion.position -= Frenado * Camion.forward;
 			
 			PedalFren.localPosition = PFrnPosIni - PedalFren.forward * SensivPed * Frenado;
-		}
-		else
-		{
-			//PedalFren.localPosition = PFrnPosIni;
 		}
 	}
 }
