@@ -1,91 +1,53 @@
 using UnityEngine;
 
-public class ControlDireccion : MonoBehaviour
+// TODO reemplazar por el nuevo sistema de inputs
+public class ControlDireccion : MonoBehaviour 
 {
-    private Player player;
+	public enum TipoInput {AWSD, Arrows}
+	public TipoInput InputAct = TipoInput.AWSD;
+	public bool Habilitado = true;
 
-    public enum Sentido
-    {
-        Der,
-        Izq
-    }
+	float Giro = 0;
+	CarController carController;
+	
+	// Use this for initialization
+	void Start () => carController = GetComponent<CarController>();
 
-	public enum TipoInput {Mouse, Kinect, AWSD, Arrows}
-	public TipoInput InputAct = TipoInput.Mouse;
-    public Transform ManoDer;
-	public Transform ManoIzq;
-    public float MaxAng = 90;
-	public float DesSencibilidad = 90;
-    private float Giro;
-    private Sentido DirAct;
-    public bool Habilitado = true;
-    private CarController carController;
-
-    private void Awake()
-    {
-        player = GetComponent<Player>();
-        carController = GetComponent<CarController>();
-    }
-
-    private void Update () 
+    // Update is called once per frame
+    void Update () 
 	{
 		switch(InputAct)
 		{
-		case TipoInput.Mouse:
-			if(Habilitado) carController.SetGiro(MousePos.Relation(MousePos.AxisRelation.Horizontal));
-            break;
-			
-		case TipoInput.Kinect:
-            DirAct = (ManoIzq.position.y > ManoDer.position.y) ? Sentido.Der : Sentido.Izq;
-			
-			switch(DirAct)
-			{
-			case Sentido.Der:
-				if(Angulo() <= MaxAng)
-					Giro = Angulo() / (MaxAng + DesSencibilidad);
-				else
-					Giro = 1;
-
-                if (Habilitado) carController.SetGiro(Giro);
-                break;
-				
-			case Sentido.Izq:
-                if (Angulo() <= MaxAng)
-                    Giro = (Angulo() / (MaxAng + DesSencibilidad)) * (-1);
-                else
-                    Giro = -1;
-
-                if (Habilitado) carController.SetGiro(Giro);
-				
-				break;
-			}
-			break;
-            case TipoInput.AWSD:                // Todo: WASD GetKey() KeyConde.W
-                if (Habilitado)
-                {
-                    if (Input.GetKey(KeyCode.A) || player.direction == Player.Direction.Left) 
-                        carController.SetGiro(-1);
-                    if (Input.GetKey(KeyCode.D) || player.direction == Player.Direction.Right)
-                        carController.SetGiro(1);
+            case TipoInput.AWSD:
+                if (Habilitado) {
+                    if (Input.GetKey(KeyCode.A)) {
+						Giro = -1;
+                    }
+                    else if (Input.GetKey(KeyCode.D)) {
+						Giro = 1;
+                    }
+                    else {
+						Giro = 0;
+					}
                 }
                 break;
             case TipoInput.Arrows:
-                if (Habilitado)
-                {
-                    if (Input.GetKey(KeyCode.LeftArrow) || player.direction == Player.Direction.Left) 
-                        carController.SetGiro(-1);
-                    if (Input.GetKey(KeyCode.RightArrow) || player.direction == Player.Direction.Right) 
-                        carController.SetGiro(1);
+                if (Habilitado) {
+                    if (Input.GetKey(KeyCode.LeftArrow)) {
+						Giro = -1;
+					}
+                    else if (Input.GetKey(KeyCode.RightArrow)) {
+						Giro = 1;
+					}
+                    else {
+						Giro = 0;
+					}
                 }
                 break;
         }
-	}
-    public float GetGiro() => Giro;
 
-    private float Angulo()
-	{
-		Vector2 diferencia = new Vector2(ManoDer.localPosition.x, ManoDer.localPosition.y) - new Vector2(ManoIzq.localPosition.x, ManoIzq.localPosition.y);
-		
-		return Vector2.Angle(diferencia,new Vector2(1,0));
+		carController.SetGiro(Giro);
 	}
+
+	public float GetGiro() => Giro;
 }

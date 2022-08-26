@@ -3,16 +3,14 @@ using UnityEngine;
 public class BolsaAnim : MonoBehaviour 
 {
 	public float GiroVel = 1;
-	
-	public Vector3 Amlitud = Vector3.zero;
 	public float VelMov = 1;
-	
-	Vector3 PosIni;
-	bool Subiendo = true;
-	Vector3 vAuxGir = Vector3.zero;
-	
+	public Vector3 Amlitud = Vector3.zero;
 	public bool Giro = true;
 	public bool MovVert = true;
+	
+	Vector3 PosIni;
+	Vector3 vAuxGir = Vector3.zero;
+	bool Subiendo = true;
 	
 	//para que inicien a destiempo
 	float TiempInicio;
@@ -34,7 +32,7 @@ public class BolsaAnim : MonoBehaviour
 			if(Giro)
 			{
 				vAuxGir = Vector3.zero;
-				vAuxGir.y = Time.deltaTime * GiroVel;
+				vAuxGir.y = T.GetDT() * GiroVel;
 				transform.localEulerAngles += vAuxGir;
 			}
 			
@@ -49,7 +47,6 @@ public class BolsaAnim : MonoBehaviour
 						Subiendo = false;
 						transform.localPosition -= Amlitud.normalized * Time.deltaTime * VelMov;
 					}
-						
 				}
 				else
 				{

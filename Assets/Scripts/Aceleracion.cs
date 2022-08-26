@@ -25,8 +25,6 @@ public class Aceleracion : MonoBehaviour
 	
 	float Frenado;
 	float Acelerado;
-	
-	//---------------------------------------------------------//
 
 	// Use this for initialization
 	void Start () 
