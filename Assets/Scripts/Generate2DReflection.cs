@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class Generate2DReflection : MonoBehaviour
 {
@@ -41,7 +40,7 @@ public class Generate2DReflection : MonoBehaviour
 			rtex = new RenderTexture(textureSize, textureSize, 16);
 			rtex.hideFlags = HideFlags.HideAndDontSave;
 			rtex.isPowerOfTwo = true;
-			rtex.isCubemap = true;
+			rtex.dimension = UnityEngine.Rendering.TextureDimension.Cube;
 			rtex.useMipMap = false;
 			rtex.Create();
 			
@@ -53,7 +52,6 @@ public class Generate2DReflection : MonoBehaviour
 			GameObject go = new GameObject("CubemapCamera", typeof(Camera));
 			go.hideFlags = HideFlags.HideAndDontSave;
 			cam = go.GetComponent<Camera>();
-			// cam.nearClipPlane = 0.05f;
 			cam.farClipPlane = 150f;
 			cam.enabled = false;
 			cam.cullingMask = mask;
