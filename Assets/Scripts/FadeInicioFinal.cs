@@ -1,22 +1,16 @@
 using UnityEngine;
-using System.Collections;
 
 public class FadeInicioFinal : MonoBehaviour 
 {
 	public float Duracion = 2;
 	public float Vel = 2;
 	float TiempInicial;
-	
 	MngPts Mng;
-	
-	Color aux;
-	
-	bool MngAvisado = false;
+    Color aux;
+    bool MngAvisado = false;
 
-	// Use this for initialization
-	void Start ()
+    void Start ()
 	{
-		//renderer.material = IniFin;
 		Mng = (MngPts)GameObject.FindObjectOfType(typeof (MngPts));
 		TiempInicial = Mng.TiempEspReiniciar;
 		
@@ -24,18 +18,16 @@ public class FadeInicioFinal : MonoBehaviour
 		aux.a = 0;
 		GetComponent<Renderer>().material.color = aux;
 	}
-	
-	// Update is called once per frame
+
 	void Update () 
 	{
-		
-		if(Mng.TiempEspReiniciar > TiempInicial - Duracion)//aparicion
+		if(Mng.TiempEspReiniciar > TiempInicial - Duracion)
 		{
 			aux = GetComponent<Renderer>().material.color;
 			aux.a += Time.deltaTime / Duracion;
 			GetComponent<Renderer>().material.color = aux;			
 		}
-		else if(Mng.TiempEspReiniciar < Duracion)//desaparicion
+		else if(Mng.TiempEspReiniciar < Duracion)
 		{
 			aux = GetComponent<Renderer>().material.color;
 			aux.a -= Time.deltaTime / Duracion;
@@ -44,9 +36,7 @@ public class FadeInicioFinal : MonoBehaviour
 			if(!MngAvisado)
 			{
 				MngAvisado = true;
-				Mng.DesaparecerGUI();
 			}
 		}
-				
 	}
 }
