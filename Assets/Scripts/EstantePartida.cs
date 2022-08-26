@@ -1,11 +1,8 @@
 using UnityEngine;
-using System.Collections;
 
 public class EstantePartida : ManejoPallets
 {
-	//public Cinta CintaReceptora;//cinta que debe recibir la bolsa
 	public GameObject ManoReceptora;
-	//public Pallet.Valores Valor;
 	
 	void OnTriggerEnter(Collider other)
 	{
@@ -16,8 +13,6 @@ public class EstantePartida : ManejoPallets
 		}
 	}
 	
-	//------------------------------------------------------------//
-	
 	public override void Dar(ManejoPallets receptor)
 	{
         if (receptor.Recibir(Pallets[0])) {
@@ -27,7 +22,6 @@ public class EstantePartida : ManejoPallets
 	
 	public override bool Recibir (Pallet pallet)
 	{
-		//pallet.CintaReceptora = CintaReceptora.gameObject;
 		pallet.Portador = gameObject;
 		return base.Recibir (pallet);
 	}
