@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Estanteria : ManejoPallets
 {	
-	public Cinta CintaReceptora;//cinta que debe recibir la bolsa
+	public Cinta CintaReceptora;	//cinta que debe recibir la bolsa
 	public Pallet.Valores Valor;
 	PilaPalletMng Contenido;
 	public bool Anim = false;
@@ -17,8 +17,6 @@ public class Estanteria : ManejoPallets
 	public Color32 ColorParpadeo;
 	Color32 ColorOrigModel;
 	
-	//--------------------------------//	
-	
 	void Start () 
 	{
 		Contenido = GetComponent<PilaPalletMng>();
@@ -30,7 +28,7 @@ public class Estanteria : ManejoPallets
 		//animacion de parpadeo
 		if(Anim)
 		{
-			AnimTempo += T.GetDT();
+			AnimTempo += Time.deltaTime;
 			if(AnimTempo > Permanencia)
 			{
 				if(ModelSuelo.GetComponent<Renderer>().material.color == ColorParpadeo)
@@ -59,13 +57,15 @@ public class Estanteria : ManejoPallets
 		}
 	}
 	
-	//------------------------------------------------------------//
-	
 	public override void Dar(ManejoPallets receptor)
 	{
-        if (Tenencia()) {
-            if (Controlador.GetPalletEnMov() == null) {
-                if (receptor.Recibir(Pallets[0])) {
+        if (Tenencia()) 
+		{
+            if (Controlador.GetPalletEnMov() == null) 
+			{
+                if (receptor.Recibir(Pallets[0])) 
+				{
+
                     //enciende la cinta y el indicador
                     //cambia la textura de cuantos pallet le queda
                     CintaReceptora.Encender();
@@ -74,7 +74,6 @@ public class Estanteria : ManejoPallets
                     Pallets.RemoveAt(0);
                     Contenido.Sacar();
                     ApagarAnim();
-                    //Debug.Log("pallet entregado a Mano de Estanteria");
                 }
             }
         }
