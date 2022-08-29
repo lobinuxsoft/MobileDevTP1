@@ -1,427 +1,256 @@
 using UnityEngine;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 using System.Collections;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour 
 {
-	public static GameManager Instancia;
+    
+    public static GameManager Instancia;
+
     public float TiempoDeJuego = 60;
-    public List<GameObject> obtaclesList = new List<GameObject>();
-    public enum EstadoJuego{Calibrando, Jugando, Finalizado}
-	public EstadoJuego EstAct = EstadoJuego.Calibrando;
-    public PlayerInfo PlayerInfo1;
-	public PlayerInfo PlayerInfo2;
+
+    public enum EstadoJuego { Calibrando, Jugando, Finalizado }
+    public EstadoJuego EstAct = EstadoJuego.Calibrando;
+
     public Player Player1;
-	public Player Player2;
-	public Transform Esqueleto1;
-	public Transform Esqueleto2;
-	public Vector3[] PosEsqsCarrera;
-    bool ConteoRedresivo = true;
-	public Rect ConteoPosEsc;
-	public float ConteoParaInicion = 3;
-    public Rect TiempoGUI = new Rect();
-	Rect R = new Rect();
+    public Player Player2;
+
+    public Rect ConteoPosEsc;
+    public float ConteoParaInicion = 3;
+    public Text ConteoInicio;
+    public Text TiempoDeJuegoText;
+
     public float TiempEspMuestraPts = 3;
-    public Vector3[]PosCamionesCarrera = new Vector3[2];
+
+    //posiciones de los camiones dependientes del lado que les toco en la pantalla
+    //la pos 0 es para la izquierda y la 1 para la derecha
+    public Vector3[] PosCamionesCarrera = new Vector3[2];
+
+    //posiciones de los camiones para el tutorial
     public Vector3 PosCamion1Tuto = Vector3.zero;
-	public Vector3 PosCamion2Tuto = Vector3.zero;
+    public Vector3 PosCamion2Tuto = Vector3.zero;
+
+    //listas de GO que activa y desactiva por sub-escena
+    //escena de tutorial
     public GameObject[] ObjsCalibracion1;
-	public GameObject[] ObjsCalibracion2;
-	//escena de tutorial
-	public GameObject[] ObjsTuto1;
-	public GameObject[] ObjsTuto2;
-	//la pista de carreras
-	public GameObject[] ObjsCarrera;
-	IList<int> users;
-    public ControladorDeDescarga controladorP2;
-    public PalletMover palletP2;
-    public GameObject[] buttonStart;
+    public GameObject[] ObjsCalibracion2;
 
-	void Awake()
-	{
-		GameManager.Instancia = this;
-	}
+    //la pista de carreras
+    public GameObject[] ObjsCarrera;
 
-    void Start()
-	{
-		IniciarCalibracion();
-        if (GameMaster.Get().IsSinglePlayer())
-        {
-            StartCoroutine(UseAutimaticArrow());
-        }
+    bool ConteoRedresivo = true;
 
-        int dificult = GameMaster.Get().dificult;
-        for (int i = 0; i <= dificult; i++)
-        {
-            obtaclesList[i].SetActive(true);
-        }
-	}
+    void Awake() => GameManager.Instancia = this;
 
-    private IEnumerator UseAutimaticArrow()
-    {
-        CreatePlayer2();
-
-        yield return new WaitForSeconds(0.1f);
-        palletP2.FirstStep();
-
-        yield return new WaitForSeconds(0.1f);
-        palletP2.SecondStep();
-
-        yield return new WaitForSeconds(0.1f);
-        palletP2.ThirdStep();
-	}
-
-    public void CreatePlayer1()
-    {
-        if (!PlayerInfo1.PJ)
-        {
-            buttonStart[0].SetActive(false);
-			PlayerInfo1 = new PlayerInfo(0, Player1);
-            PlayerInfo1.LadoAct = Visualizacion.Lado.Izq;
-            SetPosicion(PlayerInfo1);
-        }
+    IEnumerator Start() {
+        yield return null;
+        IniciarTutorial();
     }
 
-    public void CreatePlayer2()
-    {
-        if (!PlayerInfo2.PJ)
-        {
-            buttonStart[1].SetActive(false);
-            PlayerInfo2 = new PlayerInfo(1, Player2);
-            PlayerInfo2.LadoAct = Visualizacion.Lado.Der;
-            SetPosicion(PlayerInfo2);
-        }
-    }
-
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.Mouse1) && Input.GetKey(KeyCode.Keypad0))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    void Update() {
+        //REINICIAR
+        if (Input.GetKey(KeyCode.Alpha0)) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+        //CIERRA LA APLICACION
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+        }
 
-        switch (EstAct)
-        {
+        switch (EstAct) {
             case EstadoJuego.Calibrando:
-                if (Input.GetKey(KeyCode.Mouse0) && Input.GetKey(KeyCode.Keypad0))
-                {
-                    if (PlayerInfo1 != null && PlayerInfo2 != null)
-                    {
-                        EndCalib();
-                    }
-					else if (PlayerInfo1 != null && GameMaster.Get().IsSinglePlayer())
-                    {
-                        EndCalib();
-					}
 
+                if (Input.GetKeyDown(KeyCode.W)) {
+                    Player1.Seleccionado = true;
                 }
 
-                if (Input.GetKeyDown(KeyCode.W))
-                {
-                    CreatePlayer1();
-                }
-
-                if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                    CreatePlayer2();
-                }
-
-                if (PlayerInfo1.PJ && PlayerInfo2.PJ)
-                {
-                    if (PlayerInfo1.FinTuto2 && PlayerInfo2.FinTuto2)
-                    {
-                        EmpezarCarrera();
-                    }
+                if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                    Player2.Seleccionado = true;
                 }
 
                 break;
+
+
             case EstadoJuego.Jugando:
-                if (Input.GetKey(KeyCode.Mouse1) && Input.GetKey(KeyCode.Keypad0))
+
+                //SKIP LA CARRERA
+                if (Input.GetKey(KeyCode.Alpha9)) {
                     TiempoDeJuego = 0;
+                }
 
-                if (TiempoDeJuego <= 0) FinalizarCarrera();
+                if (TiempoDeJuego <= 0) {
+                    FinalizarCarrera();
+                }
 
-                if (ConteoRedresivo)
-                {
-                    ConteoParaInicion -= Time.deltaTime;
-                    if (ConteoParaInicion < 0)
-                    {
+                if (ConteoRedresivo) {
+                    ConteoParaInicion -= T.GetDT();
+                    if (ConteoParaInicion < 0) {
                         EmpezarCarrera();
                         ConteoRedresivo = false;
                     }
                 }
-                else
-                {
-                    TiempoDeJuego -= Time.deltaTime;
+                else {
+                    //baja el tiempo del juego
+                    TiempoDeJuego -= T.GetDT();
                 }
 
+                if (ConteoRedresivo) {
+                    if (ConteoParaInicion > 1) {
+                        ConteoInicio.text = ConteoParaInicion.ToString("0");
+                    }
+                    else {
+                        ConteoInicio.text = "GO";
+                    }
+                }
+
+                ConteoInicio.gameObject.SetActive(ConteoRedresivo);
+
+                TiempoDeJuegoText.text = TiempoDeJuego.ToString("00");
+
                 break;
+
             case EstadoJuego.Finalizado:
+
+                //muestra el puntaje
+
                 TiempEspMuestraPts -= Time.deltaTime;
                 if (TiempEspMuestraPts <= 0)
-                    SceneManager.LoadScene("GameOver");
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
                 break;
         }
+
+        TiempoDeJuegoText.transform.parent.gameObject.SetActive(EstAct == EstadoJuego.Jugando && !ConteoRedresivo);
     }
 
-    void EndCalib()
-    {
-        FinCalibracion(0);
-        FinCalibracion(1);
-
-        FinTutorial(0);
-        FinTutorial(1);
-	}
-
-	public void IniciarCalibracion()
-	{
-		for(int i = 0; i < ObjsCalibracion1.Length; i++)
-		{
-			ObjsCalibracion1[i].SetActive(true);
-			ObjsCalibracion2[i].SetActive(true);
-		}
-		
-		for(int i = 0; i < ObjsTuto2.Length; i++)
-		{
-			ObjsTuto2[i].SetActive(false);
-			ObjsTuto1[i].SetActive(false);
-		}
-
-        for(int i = 0; i < ObjsCarrera.Length; i++)
-		{
-			ObjsCarrera[i].SetActive(false);
-		}
-
-        Player1.CambiarACalibracion();
-
-        if (!GameMaster.Get().IsSinglePlayer())
-            Player2.CambiarACalibracion();
-    }
-	void CambiarATutorial()
-	{
-		PlayerInfo1.FinCalibrado = true;
-			
-		for(int i = 0; i < ObjsTuto1.Length; i++)
-		{
-			ObjsTuto1[i].SetActive(true);
-		}
-		
-		for(int i = 0; i < ObjsCalibracion1.Length; i++)
-		{
-			ObjsCalibracion1[i].SetActive(false);
-		}
-
-		Player1.GetComponent<Frenado>().Frenar();
-		Player1.CambiarATutorial();
-		Player1.gameObject.transform.position = PosCamion1Tuto;//posiciona el camion
-		Player1.transform.forward = Vector3.forward;
-			
-			
-		PlayerInfo2.FinCalibrado = true;
-			
-		for(int i = 0; i < ObjsCalibracion2.Length; i++)
-		{
-			ObjsCalibracion2[i].SetActive(false);
-		}
-		
-		for(int i = 0; i < ObjsTuto2.Length; i++)
-		{
-			ObjsTuto2[i].SetActive(true);
-		}
-
-		Player2.GetComponent<Frenado>().Frenar();
-		Player2.gameObject.transform.position = PosCamion2Tuto;
-		Player2.CambiarATutorial();
-		Player2.transform.forward = Vector3 .forward;
-	}
-
-    void EmpezarCarrera()
-	{
-		Player1.GetComponent<Frenado>().RestaurarVel();
-		Player1.GetComponent<ControlDireccion>().Habilitado = true;
-			
-		Player2.GetComponent<Frenado>().RestaurarVel();
-		Player2.GetComponent<ControlDireccion>().Habilitado = true;
-	}
-
-    void FinalizarCarrera()
-	{		
-		EstAct = GameManager.EstadoJuego.Finalizado;
-		
-		TiempoDeJuego = 0;
-		
-		if(Player1.Dinero > Player2.Dinero)
-		{
-			//lado que gano
-			if(PlayerInfo1.LadoAct == Visualizacion.Lado.Der)
-				DatosPartida.LadoGanadaor = DatosPartida.Lados.Der;
-			else
-				DatosPartida.LadoGanadaor = DatosPartida.Lados.Izq;
-			
-			//puntajes
-			DatosPartida.PtsGanador = Player1.Dinero;
-			DatosPartida.PtsPerdedor = Player2.Dinero;
-		}
-		else
-		{
-			//lado que gano
-			if(PlayerInfo2.LadoAct == Visualizacion.Lado.Der)
-				DatosPartida.LadoGanadaor = DatosPartida.Lados.Der;
-			else
-				DatosPartida.LadoGanadaor = DatosPartida.Lados.Izq;
-			
-			//puntajes
-			DatosPartida.PtsGanador = Player2.Dinero;
-			DatosPartida.PtsPerdedor = Player1.Dinero;
-		}
-		
-		Player1.GetComponent<Frenado>().Frenar();
-		Player2.GetComponent<Frenado>().Frenar();
-		
-		Player1.ContrDesc.FinDelJuego();
-
-        if (!GameMaster.Get().IsSinglePlayer())
-            Player2.ContrDesc.FinDelJuego();
-    }
-
-	void SetPosicion(PlayerInfo pjInf)
-	{	
-		pjInf.PJ.GetComponent<Visualizacion>().SetLado(pjInf.LadoAct);
-		pjInf.PJ.ContrCalib.IniciarTesteo();
-		
-		if(pjInf.PJ == Player1)
-		{
-			if(pjInf.LadoAct == Visualizacion.Lado.Izq)
-				Player2.GetComponent<Visualizacion>().SetLado(Visualizacion.Lado.Der);
-			else
-				Player2.GetComponent<Visualizacion>().SetLado(Visualizacion.Lado.Izq);
-		}
-		else
-		{
-			if(pjInf.LadoAct == Visualizacion.Lado.Izq)
-				Player1.GetComponent<Visualizacion>().SetLado(Visualizacion.Lado.Der);
-			else
-				Player1.GetComponent<Visualizacion>().SetLado(Visualizacion.Lado.Izq);
-		}
-    }
-
-    void CambiarACarrera()
-	{
-		Esqueleto1.transform.position = PosEsqsCarrera[0];
-		Esqueleto2.transform.position = PosEsqsCarrera[1];
-		
-		for(int i = 0; i < ObjsCarrera.Length; i++)
-		{
-			ObjsCarrera[i].SetActive(true);
-		}
-
-		PlayerInfo1.FinCalibrado = true;
-			
-		for(int i = 0; i < ObjsTuto1.Length; i++)
-		{
-			ObjsTuto1[i].SetActive(true);
-		}
-		
-		for(int i = 0; i < ObjsCalibracion1.Length; i++)
-		{
-			ObjsCalibracion1[i].SetActive(false);
-		}
-
-        PlayerInfo2.FinCalibrado = true;
-
-        for(int i = 0; i < ObjsCalibracion2.Length; i++)
-		{
-			ObjsCalibracion2[i].SetActive(false);
-		}
-
-        for(int i = 0; i < ObjsTuto2.Length; i++)
-		{
-			ObjsTuto2[i].SetActive(true);
-		}
-
-        if(PlayerInfo1.LadoAct == Visualizacion.Lado.Izq)
-		{
-			Player1.gameObject.transform.position = PosCamionesCarrera[0];
-			Player2.gameObject.transform.position = PosCamionesCarrera[1];
-		}
-		else
-		{
-			Player1.gameObject.transform.position = PosCamionesCarrera[1];
-			Player2.gameObject.transform.position = PosCamionesCarrera[0];
-		}
-
-        Player1.transform.forward = Vector3 .forward;
-		Player1.GetComponent<Frenado>().Frenar();
-		Player1.CambiarAConduccion();
-
-        if (!GameMaster.Get().IsSinglePlayer())
-        {
-            Player2.transform.forward = Vector3.forward;
-            Player2.GetComponent<Frenado>().Frenar();
-            Player2.CambiarAConduccion();
+    public void IniciarTutorial() {
+        for (int i = 0; i < ObjsCalibracion1.Length; i++) {
+            ObjsCalibracion1[i].SetActive(true);
+            ObjsCalibracion2[i].SetActive(true);
         }
 
+        for (int i = 0; i < ObjsCarrera.Length; i++) {
+            ObjsCarrera[i].SetActive(false);
+        }
+
+        Player1.CambiarATutorial();
+        Player2.CambiarATutorial();
+
+        TiempoDeJuegoText.transform.parent.gameObject.SetActive(false);
+        ConteoInicio.gameObject.SetActive(false);
+    }
+
+    void EmpezarCarrera() {
         Player1.GetComponent<Frenado>().RestaurarVel();
-		Player2.GetComponent<Frenado>().RestaurarVel();
-		Player1.GetComponent<ControlDireccion>().Habilitado = false;
-		Player2.GetComponent<ControlDireccion>().Habilitado = false;
-		Player1.transform.forward = Vector3.forward;
-		Player2.transform.forward = Vector3.forward;
-        EstAct = GameManager.EstadoJuego.Jugando;
-	}
+        Player1.GetComponent<ControlDireccion>().Habilitado = true;
 
-    public void FinTutorial(int playerID)
-	{
-        if (playerID == 0)
-        {
-            PlayerInfo1.FinTuto2 = true;
-
-        }
-        else if (playerID == 1)
-        {
-            PlayerInfo2.FinTuto2 = true;
-        }
-
-        if(PlayerInfo1.FinTuto2 && PlayerInfo2.FinTuto2)
-		{
-			CambiarACarrera();
-		}
-	}
-
-    public void FinCalibracion(int playerID)
-	{
-		if(playerID == 0)
-		{
-			PlayerInfo1.FinTuto1 = true;
-			
-		}
-		else if(playerID == 1)
-		{
-			PlayerInfo2.FinTuto1 = true;
-		}
-		
-		if(PlayerInfo1.PJ != null && PlayerInfo2.PJ != null)
-            if (PlayerInfo1.FinTuto1 && PlayerInfo2.FinTuto1)
-                CambiarACarrera();
+        Player2.GetComponent<Frenado>().RestaurarVel();
+        Player2.GetComponent<ControlDireccion>().Habilitado = true;
     }
 
-    [System.Serializable]
-	public class PlayerInfo
-	{
-        public PlayerInfo(int tipoDeInput, Player pj)
+    void FinalizarCarrera() {
+        EstAct = GameManager.EstadoJuego.Finalizado;
+
+        TiempoDeJuego = 0;
+        
+        if (Player1.Dinero > Player2.Dinero) {
+            //lado que gano
+            if (Player1.LadoActual == Visualizacion.Lado.Der)
+                DatosPartida.LadoGanadaor = DatosPartida.Lados.Der;
+            else
+                DatosPartida.LadoGanadaor = DatosPartida.Lados.Izq;
+            //puntajes
+            DatosPartida.PtsGanador = Player1.Dinero;
+            DatosPartida.PtsPerdedor = Player2.Dinero;
+        }
+        else 
         {
-            TipoDeInput = tipoDeInput;
-            PJ = pj;
+            //lado que gano
+            if (Player2.LadoActual == Visualizacion.Lado.Der)
+                DatosPartida.LadoGanadaor = DatosPartida.Lados.Der;
+            else
+                DatosPartida.LadoGanadaor = DatosPartida.Lados.Izq;
+
+            //puntajes
+            DatosPartida.PtsGanador = Player2.Dinero;
+            DatosPartida.PtsPerdedor = Player1.Dinero;
         }
 
-        public bool FinCalibrado = false;
-		public bool FinTuto1 = false;
-		public bool FinTuto2 = false;
-        public Visualizacion.Lado LadoAct;
-        public int TipoDeInput = -1;
-        public Player PJ;
-	}
+        Player1.GetComponent<Frenado>().Frenar();
+        Player2.GetComponent<Frenado>().Frenar();
+
+        Player1.ContrDesc.FinDelJuego();
+        Player2.ContrDesc.FinDelJuego();
+    }
+
+    //cambia a modo de carrera
+    void CambiarACarrera() {
+
+        EstAct = GameManager.EstadoJuego.Jugando;
+
+        for (int i = 0; i < ObjsCarrera.Length; i++) {
+            ObjsCarrera[i].SetActive(true);
+        }
+
+        //desactivacion de la calibracion
+        Player1.FinCalibrado = true;
+
+        for (int i = 0; i < ObjsCalibracion1.Length; i++) {
+            ObjsCalibracion1[i].SetActive(false);
+        }
+
+        Player2.FinCalibrado = true;
+
+        for (int i = 0; i < ObjsCalibracion2.Length; i++) {
+            ObjsCalibracion2[i].SetActive(false);
+        }
+
+
+        //posiciona los camiones dependiendo de que lado de la pantalla esten
+        if (Player1.LadoActual == Visualizacion.Lado.Izq) {
+            Player1.gameObject.transform.position = PosCamionesCarrera[0];
+            Player2.gameObject.transform.position = PosCamionesCarrera[1];
+        }
+        else {
+            Player1.gameObject.transform.position = PosCamionesCarrera[1];
+            Player2.gameObject.transform.position = PosCamionesCarrera[0];
+        }
+
+        Player1.transform.forward = Vector3.forward;
+        Player1.GetComponent<Frenado>().Frenar();
+        Player1.CambiarAConduccion();
+
+        Player2.transform.forward = Vector3.forward;
+        Player2.GetComponent<Frenado>().Frenar();
+        Player2.CambiarAConduccion();
+
+        //los deja andando
+        Player1.GetComponent<Frenado>().RestaurarVel();
+        Player2.GetComponent<Frenado>().RestaurarVel();
+        //cancela la direccion
+        Player1.GetComponent<ControlDireccion>().Habilitado = false;
+        Player2.GetComponent<ControlDireccion>().Habilitado = false;
+        //les de direccion
+        Player1.transform.forward = Vector3.forward;
+        Player2.transform.forward = Vector3.forward;
+
+        TiempoDeJuegoText.transform.parent.gameObject.SetActive(false);
+        ConteoInicio.gameObject.SetActive(false);
+    }
+
+    public void FinCalibracion(int playerID) {
+        if (playerID == 0) {
+            Player1.FinTuto = true;
+
+        }
+        if (playerID == 1) {
+            Player2.FinTuto = true;
+        }
+
+        if (Player1.FinTuto && Player2.FinTuto)
+            CambiarACarrera();
+    }
 }

@@ -6,16 +6,13 @@ public class AcelerAuto : MonoBehaviour
 	float Velocidad = 0;
 	public float VelMax = 0;
 	ReductorVelColl Obstaculo = null;
-
-	Rigidbody body;
+	
 	bool Avil = true;
 	public float TiempRecColl = 0;
 	float Tempo = 0;
-
-	private void Awake() => body = GetComponent<Rigidbody>();
-
-    // Update is called once per frame
-    void Update ()
+	
+	// Update is called once per frame
+	void Update ()
 	{	
 		if(Avil)
 		{
@@ -34,8 +31,8 @@ public class AcelerAuto : MonoBehaviour
 		{
 			Velocidad += AcelPorSeg * Time.fixedDeltaTime;
 		}
-
-        body.AddForce(this.transform.forward * Velocidad);
+		
+		GetComponent<Rigidbody>().AddForce(this.transform.forward * Velocidad);
 	}
 	
 	 void OnCollisionEnter(Collision collision)
@@ -45,11 +42,12 @@ public class AcelerAuto : MonoBehaviour
 			Obstaculo = collision.transform.GetComponent<ReductorVelColl>();
 			if(Obstaculo != null)
 			{
-                body.velocity /= 2;
+				GetComponent<Rigidbody>().velocity /= 2;
 			}
+
 			Obstaculo = null;
 		}
 	}
 	
-	public void Chocar(ReductorVelColl obst) => body.velocity /= 2;
+	public void Chocar(ReductorVelColl obst) => GetComponent<Rigidbody>().velocity /= 2;
 }

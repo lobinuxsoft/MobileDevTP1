@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class CollContraObst : MonoBehaviour 
 {
-	public float TiempEsp = 1;
-	float Tempo1 = 0;
-	public float TiempNoColl = 2;
-	float Tempo2 = 0;
-	
-	enum Colisiones {ConTodo, EspDesact, SinObst}
+	enum Colisiones { ConTodo, EspDesact, SinObst }
 
+	public float TiempEsp = 1;
+	public float TiempNoColl = 2;
+
+	float Tempo1 = 0, Tempo2 = 0;
+	
 	Colisiones Colisiono = CollContraObst.Colisiones.ConTodo;
 
 	// Use this for initialization
@@ -23,7 +23,7 @@ public class CollContraObst : MonoBehaviour
 			break;
 			
 		case Colisiones.EspDesact:
-			Tempo1 += Time.deltaTime;
+			Tempo1 += T.GetDT();
 			if(Tempo1 >= TiempEsp)
 			{
 				Tempo1 = 0;
@@ -32,7 +32,7 @@ public class CollContraObst : MonoBehaviour
 			break;
 			
 		case Colisiones.SinObst:
-			Tempo2 += Time.deltaTime;
+			Tempo2 += T.GetDT();
 			if(Tempo2 >= TiempNoColl)
 			{
 				Tempo2 = 0;
@@ -49,8 +49,6 @@ public class CollContraObst : MonoBehaviour
 			ColisionConObst();
 		}
 	}
-	
-	//-------------------------//
 	
 	void ColisionConObst()
 	{

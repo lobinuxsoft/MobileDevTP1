@@ -15,7 +15,7 @@ public class CheakPoint : MonoBehaviour
 	{
 		if(!HabilitadoResp)
 		{
-			Tempo += Time.deltaTime;
+			Tempo += T.GetDT();
 			if(Tempo >= TiempPermanencia)
 			{
 				Tempo = 0;
@@ -27,16 +27,18 @@ public class CheakPoint : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
 		if(other.tag == PlayerTag)
-            other.GetComponent<Respawn>().AgregarCP(this);
-    }
+		{
+			other.GetComponent<Respawn>().AgregarCP(this);
+		}	
+	}
 	
 	void OnTriggerExit(Collider other)
 	{
 		if(other.tag == PlayerTag)
-            HabilitadoResp = true;
-    }
-	
-	//---------------------------------------------------//
+		{
+			HabilitadoResp = true;
+		}
+	}
 	
 	public bool Habilitado()
 	{

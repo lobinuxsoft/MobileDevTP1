@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Direccion : MonoBehaviour 
 {
+	enum Sentido { Der, Izq }
+
 	public Transform ManoDer;
 	public Transform ManoIzq;
 	
@@ -13,7 +15,6 @@ public class Direccion : MonoBehaviour
 	public Transform Volante;
 	
 	
-	enum Sentido {Der, Izq}
 	Sentido DirAct;
 	float Diferencia;
 	
