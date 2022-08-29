@@ -1,44 +1,39 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PalletMover : ManejoPallets
 {
-    // TODO implementar el nuevo sistema de inputs
-
-    public MoveType miInput;
-
-    public enum MoveType { WASD, Arrows }
-
     public ManejoPallets Desde, Hasta;
     bool segundoCompleto = false;
 
-    private void Update() {
-        switch (miInput) {
-            case MoveType.WASD:
-                if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.A)) {
-                    PrimerPaso();
-                }
-                if (Tenencia() && Input.GetKeyDown(KeyCode.S)) {
-                    SegundoPaso();
-                }
-                if (segundoCompleto && Tenencia() && Input.GetKeyDown(KeyCode.D)) {
-                    TercerPaso();
-                }
-                break;
-            case MoveType.Arrows:
-                if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.LeftArrow)) {
-                    PrimerPaso();
-                }
-                if (Tenencia() && Input.GetKeyDown(KeyCode.DownArrow)) {
-                    SegundoPaso();
-                }
-                if (segundoCompleto && Tenencia() && Input.GetKeyDown(KeyCode.RightArrow)) {
-                    TercerPaso();
-                }
-                break;
-            default:
-                break;
-        }
-    }
+    //private void Update() {
+    //    switch (miInput) {
+    //        case MoveType.WASD:
+    //            if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.A)) {
+    //                PrimerPaso();
+    //            }
+    //            if (Tenencia() && Input.GetKeyDown(KeyCode.S)) {
+    //                SegundoPaso();
+    //            }
+    //            if (segundoCompleto && Tenencia() && Input.GetKeyDown(KeyCode.D)) {
+    //                TercerPaso();
+    //            }
+    //            break;
+    //        case MoveType.Arrows:
+    //            if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.LeftArrow)) {
+    //                PrimerPaso();
+    //            }
+    //            if (Tenencia() && Input.GetKeyDown(KeyCode.DownArrow)) {
+    //                SegundoPaso();
+    //            }
+    //            if (segundoCompleto && Tenencia() && Input.GetKeyDown(KeyCode.RightArrow)) {
+    //                TercerPaso();
+    //            }
+    //            break;
+    //        default:
+    //            break;
+    //    }
+    //}
 
     void PrimerPaso() {
         Desde.Dar(this);
@@ -71,5 +66,23 @@ public class PalletMover : ManejoPallets
         }
         else
             return false;
+    }
+
+    public void FirstStepPallet(InputAction.CallbackContext context)
+    {
+        if (!Tenencia() && Desde.Tenencia() && context.performed)
+            PrimerPaso();
+    }
+
+    public void SecondStepPallet(InputAction.CallbackContext context)
+    {
+        if (Tenencia() && context.performed)
+            SegundoPaso();
+    }
+
+    public void ThirdStepPallet(InputAction.CallbackContext context)
+    {
+        if (segundoCompleto && Tenencia() && context.performed)
+            TercerPaso();
     }
 }

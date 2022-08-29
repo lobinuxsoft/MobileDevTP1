@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 using System.Collections;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour 
 {
@@ -50,36 +51,22 @@ public class GameManager : MonoBehaviour
     }
 
     void Update() {
-        //REINICIAR
-        if (Input.GetKey(KeyCode.Alpha0)) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-
-        //CIERRA LA APLICACION
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            Application.Quit();
-        }
 
         switch (EstAct) {
-            case EstadoJuego.Calibrando:
+            //case EstadoJuego.Calibrando:
 
-                if (Input.GetKeyDown(KeyCode.W)) {
-                    Player1.Seleccionado = true;
-                }
+            //    if (Input.GetKeyDown(KeyCode.W)) {
+            //        Player1.Seleccionado = true;
+            //    }
 
-                if (Input.GetKeyDown(KeyCode.UpArrow)) {
-                    Player2.Seleccionado = true;
-                }
+            //    if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            //        Player2.Seleccionado = true;
+            //    }
 
-                break;
+            //    break;
 
 
             case EstadoJuego.Jugando:
-
-                //SKIP LA CARRERA
-                if (Input.GetKey(KeyCode.Alpha9)) {
-                    TiempoDeJuego = 0;
-                }
 
                 if (TiempoDeJuego <= 0) {
                     FinalizarCarrera();
@@ -252,5 +239,36 @@ public class GameManager : MonoBehaviour
 
         if (Player1.FinTuto && Player2.FinTuto)
             CambiarACarrera();
+    }
+
+
+    public void ReLoadLevel(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void CloseApplication(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            Application.Quit();
+    }
+
+    public void Player1Selected(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            Player1.Seleccionado = true;
+    }
+
+    public void Player2Selected(InputAction.CallbackContext context) 
+    {
+        if (context.performed)
+            Player2.Seleccionado = true;
+    }
+
+    public void SkipRace(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+            TiempoDeJuego = 0;
     }
 }
