@@ -51,7 +51,7 @@ public class Respawn : MonoBehaviour
 	{
 		GetComponent<Rigidbody>().velocity = Vector3.zero;
 		
-		gameObject.GetComponent<CarController>().SetGiro(0f);
+		gameObject.GetComponent<CarController>().ResetTurn();
 
         if (CPAct.Habilitado())
 		{
@@ -77,7 +77,7 @@ public class Respawn : MonoBehaviour
 	{
 		GetComponent<Rigidbody>().velocity = Vector3.zero;
 		
-		gameObject.GetComponent<CarController>().SetGiro(0f);
+		gameObject.GetComponent<CarController>().ResetTurn();
 
         transform.position = pos;
 		
@@ -88,7 +88,7 @@ public class Respawn : MonoBehaviour
 	{
 		GetComponent<Rigidbody>().velocity = Vector3.zero;
 		
-		gameObject.GetComponent<CarController>().SetGiro(0f);
+		gameObject.GetComponent<CarController>().ResetTurn();
 
         transform.position = pos;
 		transform.forward = dir;

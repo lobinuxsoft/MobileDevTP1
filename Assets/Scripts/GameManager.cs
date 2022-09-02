@@ -53,18 +53,6 @@ public class GameManager : MonoBehaviour
     void Update() {
 
         switch (EstAct) {
-            //case EstadoJuego.Calibrando:
-
-            //    if (Input.GetKeyDown(KeyCode.W)) {
-            //        Player1.Seleccionado = true;
-            //    }
-
-            //    if (Input.GetKeyDown(KeyCode.UpArrow)) {
-            //        Player2.Seleccionado = true;
-            //    }
-
-            //    break;
-
 
             case EstadoJuego.Jugando:
 
@@ -132,10 +120,10 @@ public class GameManager : MonoBehaviour
 
     void EmpezarCarrera() {
         Player1.GetComponent<Frenado>().RestaurarVel();
-        Player1.GetComponent<ControlDireccion>().Habilitado = true;
+        Player1.GetComponent<CarController>().TurnEnable();
 
         Player2.GetComponent<Frenado>().RestaurarVel();
-        Player2.GetComponent<ControlDireccion>().Habilitado = true;
+        Player2.GetComponent<CarController>().TurnEnable();
     }
 
     void FinalizarCarrera() {
@@ -178,30 +166,35 @@ public class GameManager : MonoBehaviour
 
         EstAct = GameManager.EstadoJuego.Jugando;
 
-        for (int i = 0; i < ObjsCarrera.Length; i++) {
+        for (int i = 0; i < ObjsCarrera.Length; i++)
+        {
             ObjsCarrera[i].SetActive(true);
         }
 
         //desactivacion de la calibracion
         Player1.FinCalibrado = true;
 
-        for (int i = 0; i < ObjsCalibracion1.Length; i++) {
+        for (int i = 0; i < ObjsCalibracion1.Length; i++)
+        {
             ObjsCalibracion1[i].SetActive(false);
         }
 
         Player2.FinCalibrado = true;
 
-        for (int i = 0; i < ObjsCalibracion2.Length; i++) {
+        for (int i = 0; i < ObjsCalibracion2.Length; i++)
+        {
             ObjsCalibracion2[i].SetActive(false);
         }
 
 
         //posiciona los camiones dependiendo de que lado de la pantalla esten
-        if (Player1.LadoActual == Visualizacion.Lado.Izq) {
+        if (Player1.LadoActual == Visualizacion.Lado.Izq)
+        {
             Player1.gameObject.transform.position = PosCamionesCarrera[0];
             Player2.gameObject.transform.position = PosCamionesCarrera[1];
         }
-        else {
+        else
+        {
             Player1.gameObject.transform.position = PosCamionesCarrera[1];
             Player2.gameObject.transform.position = PosCamionesCarrera[0];
         }
@@ -217,9 +210,11 @@ public class GameManager : MonoBehaviour
         //los deja andando
         Player1.GetComponent<Frenado>().RestaurarVel();
         Player2.GetComponent<Frenado>().RestaurarVel();
+
         //cancela la direccion
-        Player1.GetComponent<ControlDireccion>().Habilitado = false;
-        Player2.GetComponent<ControlDireccion>().Habilitado = false;
+        Player1.GetComponent<CarController>().TurenDisable();
+        Player2.GetComponent<CarController>().TurenDisable();
+
         //les de direccion
         Player1.transform.forward = Vector3.forward;
         Player2.transform.forward = Vector3.forward;

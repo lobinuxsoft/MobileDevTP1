@@ -12,7 +12,7 @@ public class Visualizacion : MonoBehaviour
 	public enum Lado{Izq, Der}
 	public Lado LadoAct;
 	
-	ControlDireccion Direccion;
+	CarController carController;
 	Player Pj;
 
     public GameObject uiRoot;
@@ -53,7 +53,7 @@ public class Visualizacion : MonoBehaviour
     // Use this for initialization
     void Start () 
 	{
-		Direccion = GetComponent<ControlDireccion>();
+		carController = GetComponent<CarController>();
 		Pj = GetComponent<Player>();
     }
 	
@@ -186,7 +186,7 @@ public class Visualizacion : MonoBehaviour
 	
 	void SetVolante()
 	{
-		float angulo = - 45 * Direccion.GetGiro();
+		float angulo = - 45 * carController.GetTurn();
         Vector3 rot = volante.localEulerAngles;
         rot.z = angulo;
         volante.localEulerAngles = rot;

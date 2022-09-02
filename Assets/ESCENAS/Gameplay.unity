@@ -17260,10 +17260,6 @@ MonoBehaviour:
     m_ActionId: 6e38e07f-8d2d-42c9-b583-0f9c16ad29c2
     m_ActionName: Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3bbe272c-7587-49c1-a5c5-0d4a33f8e9d5
-    m_ActionName: Player2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 13082}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
@@ -17343,6 +17339,34 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6ace547d-7953-4d0a-bd23-ec4bafffdb31
     m_ActionName: GameManager/Player2[/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a73c4adb-fe55-4734-8a91-3758562b9356
+    m_ActionName: PalletP1/FirstStep[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5e3d8eb7-e260-42a2-9746-9badf80ddaab
+    m_ActionName: PalletP1/SecondStep[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f7c0d08-94d9-4d11-9f65-cf91e66a241b
+    m_ActionName: PalletP1/ThirdStep[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c530d898-479f-4787-ab64-4263b2b489a0
+    m_ActionName: PalletP2/FirstStep[/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a31e0a56-f876-4f78-a6ee-81067d676bcf
+    m_ActionName: PalletP2/SecondStep[/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 63336196-b5bc-4720-afd4-8ad18a2db42c
+    m_ActionName: PalletP2/ThirdStep[/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 84d5e8e6-e4ec-403c-b68d-7c7449788fb5
+    m_ActionName: Player2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GameManager
@@ -83446,6 +83470,12 @@ PrefabInstance:
       propertyPath: InputAct
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114630957717379974, guid: b81b1a58a0f14c9439cbdd014e695f71,
+        type: 3}
+      propertyPath: turnAction
+      value: 
+      objectReference: {fileID: -651645134134636408, guid: 696115327d8022449a3ad98b4914d738,
+        type: 3}
     - target: {fileID: 114643806136207610, guid: b81b1a58a0f14c9439cbdd014e695f71,
         type: 3}
       propertyPath: IdPlayer
@@ -83557,6 +83587,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 3377540740d871c428246b5286a591ce,
         type: 3}
+    - target: {fileID: 2385058294774499907, guid: b81b1a58a0f14c9439cbdd014e695f71,
+        type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2385058294774499907, guid: b81b1a58a0f14c9439cbdd014e695f71,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389858930734146305, guid: b81b1a58a0f14c9439cbdd014e695f71,
+        type: 3}
+      propertyPath: m_DefaultActionMap
+      value: 03d88b91-cc36-4bd9-ad3c-2beb0d7c3898
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389858930734146305, guid: b81b1a58a0f14c9439cbdd014e695f71,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389858930734146305, guid: b81b1a58a0f14c9439cbdd014e695f71,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b81b1a58a0f14c9439cbdd014e695f71, type: 3}
 --- !u!114 &27660010 stripped
@@ -83922,7 +83977,6 @@ GameObject:
   m_Component:
   - component: {fileID: 354886828}
   - component: {fileID: 354886829}
-  - component: {fileID: 354886830}
   m_Layer: 0
   m_Name: PalletMover 2
   m_TagString: Untagged
@@ -83957,127 +84011,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controlador: {fileID: 0}
+  firstStepAction: {fileID: -6063064426127350804, guid: 696115327d8022449a3ad98b4914d738,
+    type: 3}
+  secondStepAction: {fileID: 6001091550928083129, guid: 696115327d8022449a3ad98b4914d738,
+    type: 3}
+  thirdStepAction: {fileID: 1669941967689186961, guid: 696115327d8022449a3ad98b4914d738,
+    type: 3}
   Desde: {fileID: 13040}
   Hasta: {fileID: 13041}
---- !u!114 &354886830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354886827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 696115327d8022449a3ad98b4914d738,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6e38e07f-8d2d-42c9-b583-0f9c16ad29c2
-    m_ActionName: Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3bbe272c-7587-49c1-a5c5-0d4a33f8e9d5
-    m_ActionName: Player2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f04b3c8b-5f9e-40a5-9648-14c469cbc838
-    m_ActionName: GameManager/Reset[/Keyboard/r]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 00cf0d25-4ffa-495c-a330-15a27ccba775
-    m_ActionName: GameManager/Skip[/Keyboard/s]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 0face81e-0383-4788-a43e-bc7aebebcfdd
-    m_ActionName: GameManager/Quit[/Keyboard/q]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 392676d6-8277-4b52-8694-794481d07f23
-    m_ActionName: GameManager/Player1[/Keyboard/w]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6ace547d-7953-4d0a-bd23-ec4bafffdb31
-    m_ActionName: GameManager/Player2[/Keyboard/upArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a73c4adb-fe55-4734-8a91-3758562b9356
-    m_ActionName: PalletP1/FirstStep[/Keyboard/a]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5e3d8eb7-e260-42a2-9746-9badf80ddaab
-    m_ActionName: PalletP1/SecondStep[/Keyboard/s]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9f7c0d08-94d9-4d11-9f65-cf91e66a241b
-    m_ActionName: PalletP1/ThirdStep[/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 354886829}
-        m_TargetAssemblyTypeName: PalletMover, Assembly-CSharp
-        m_MethodName: FirstStepPallet
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: c530d898-479f-4787-ab64-4263b2b489a0
-    m_ActionName: PalletP2/FirstStep[/Keyboard/leftArrow]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 354886829}
-        m_TargetAssemblyTypeName: PalletMover, Assembly-CSharp
-        m_MethodName: SecondStepPallet
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: a31e0a56-f876-4f78-a6ee-81067d676bcf
-    m_ActionName: PalletP2/SecondStep[/Keyboard/downArrow]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 354886829}
-        m_TargetAssemblyTypeName: PalletMover, Assembly-CSharp
-        m_MethodName: ThirdStepPallet
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 63336196-b5bc-4720-afd4-8ad18a2db42c
-    m_ActionName: PalletP2/ThirdStep[/Keyboard/rightArrow]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: PalletP2
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &611983551
 GameObject:
   m_ObjectHideFlags: 0
@@ -84259,6 +84200,22 @@ PrefabInstance:
       propertyPath: InputAct
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114630957717379974, guid: b81b1a58a0f14c9439cbdd014e695f71,
+        type: 3}
+      propertyPath: turnAction
+      value: 
+      objectReference: {fileID: 3860861059779825646, guid: 696115327d8022449a3ad98b4914d738,
+        type: 3}
+    - target: {fileID: 114630957717379974, guid: b81b1a58a0f14c9439cbdd014e695f71,
+        type: 3}
+      propertyPath: turnAction.m_Id
+      value: 37bffa38-6888-41d1-ac93-ba5fb731bdaa
+      objectReference: {fileID: 0}
+    - target: {fileID: 114630957717379974, guid: b81b1a58a0f14c9439cbdd014e695f71,
+        type: 3}
+      propertyPath: turnAction.m_Name
+      value: Turn
+      objectReference: {fileID: 0}
     - target: {fileID: 114911345111112572, guid: b81b1a58a0f14c9439cbdd014e695f71,
         type: 3}
       propertyPath: Dinero
@@ -84294,6 +84251,11 @@ PrefabInstance:
       propertyPath: BonusText
       value: 
       objectReference: {fileID: 1896886468}
+    - target: {fileID: 114911345111112572, guid: b81b1a58a0f14c9439cbdd014e695f71,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114911345111112572, guid: b81b1a58a0f14c9439cbdd014e695f71,
         type: 3}
       propertyPath: Inventario
@@ -84405,6 +84367,11 @@ PrefabInstance:
       propertyPath: TextInvDer.Array.data[10]
       value: 
       objectReference: {fileID: 2800000, guid: 43b47ea21177fe44fb41eeb12d4499ba, type: 3}
+    - target: {fileID: 2385058294774499907, guid: b81b1a58a0f14c9439cbdd014e695f71,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b81b1a58a0f14c9439cbdd014e695f71, type: 3}
 --- !u!1 &865468521
@@ -84519,7 +84486,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1041039465}
   - component: {fileID: 1041039466}
-  - component: {fileID: 1041039467}
   m_Layer: 0
   m_Name: PalletMover
   m_TagString: Untagged
@@ -84554,127 +84520,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controlador: {fileID: 0}
+  firstStepAction: {fileID: -3687168643461937349, guid: 696115327d8022449a3ad98b4914d738,
+    type: 3}
+  secondStepAction: {fileID: 901601237039817108, guid: 696115327d8022449a3ad98b4914d738,
+    type: 3}
+  thirdStepAction: {fileID: 7735349816371704089, guid: 696115327d8022449a3ad98b4914d738,
+    type: 3}
   Desde: {fileID: 13044}
   Hasta: {fileID: 13043}
---- !u!114 &1041039467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041039464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 696115327d8022449a3ad98b4914d738,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6e38e07f-8d2d-42c9-b583-0f9c16ad29c2
-    m_ActionName: Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3bbe272c-7587-49c1-a5c5-0d4a33f8e9d5
-    m_ActionName: Player2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f04b3c8b-5f9e-40a5-9648-14c469cbc838
-    m_ActionName: GameManager/Reset[/Keyboard/r]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 00cf0d25-4ffa-495c-a330-15a27ccba775
-    m_ActionName: GameManager/Skip[/Keyboard/s]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 0face81e-0383-4788-a43e-bc7aebebcfdd
-    m_ActionName: GameManager/Quit[/Keyboard/q]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 392676d6-8277-4b52-8694-794481d07f23
-    m_ActionName: GameManager/Player1[/Keyboard/w]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6ace547d-7953-4d0a-bd23-ec4bafffdb31
-    m_ActionName: GameManager/Player2[/Keyboard/upArrow]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1041039466}
-        m_TargetAssemblyTypeName: PalletMover, Assembly-CSharp
-        m_MethodName: FirstStepPallet
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: a73c4adb-fe55-4734-8a91-3758562b9356
-    m_ActionName: PalletP1/FirstStep[/Keyboard/a]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1041039466}
-        m_TargetAssemblyTypeName: PalletMover, Assembly-CSharp
-        m_MethodName: SecondStepPallet
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 5e3d8eb7-e260-42a2-9746-9badf80ddaab
-    m_ActionName: PalletP1/SecondStep[/Keyboard/s]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1041039466}
-        m_TargetAssemblyTypeName: PalletMover, Assembly-CSharp
-        m_MethodName: ThirdStepPallet
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 9f7c0d08-94d9-4d11-9f65-cf91e66a241b
-    m_ActionName: PalletP1/ThirdStep[/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c530d898-479f-4787-ab64-4263b2b489a0
-    m_ActionName: PalletP2/FirstStep[/Keyboard/leftArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a31e0a56-f876-4f78-a6ee-81067d676bcf
-    m_ActionName: PalletP2/SecondStep[/Keyboard/downArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 63336196-b5bc-4720-afd4-8ad18a2db42c
-    m_ActionName: PalletP2/ThirdStep[/Keyboard/rightArrow]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: PalletP1
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &1049659492 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100012, guid: 42ccde1c0abcc4944b4fc7242368f31a,
@@ -84902,6 +84755,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controlador: {fileID: 0}
+  firstStepAction: {fileID: -3687168643461937349, guid: 696115327d8022449a3ad98b4914d738,
+    type: 3}
+  secondStepAction: {fileID: 901601237039817108, guid: 696115327d8022449a3ad98b4914d738,
+    type: 3}
+  thirdStepAction: {fileID: 7735349816371704089, guid: 696115327d8022449a3ad98b4914d738,
+    type: 3}
   Desde: {fileID: 13062}
   Hasta: {fileID: 13063}
 --- !u!1 &1425887806 stripped
@@ -84994,6 +84853,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controlador: {fileID: 0}
+  firstStepAction: {fileID: -6063064426127350804, guid: 696115327d8022449a3ad98b4914d738,
+    type: 3}
+  secondStepAction: {fileID: 6001091550928083129, guid: 696115327d8022449a3ad98b4914d738,
+    type: 3}
+  thirdStepAction: {fileID: 1669941967689186961, guid: 696115327d8022449a3ad98b4914d738,
+    type: 3}
   Desde: {fileID: 13017}
   Hasta: {fileID: 13016}
 --- !u!1 &1643806369 stripped
