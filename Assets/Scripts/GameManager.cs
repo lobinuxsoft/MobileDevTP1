@@ -131,15 +131,15 @@ public class GameManager : MonoBehaviour
 
         TiempoDeJuego = 0;
         
-        if (Player1.Dinero > Player2.Dinero) {
+        if (Player1.Dinero.Value > Player2.Dinero.Value) {
             //lado que gano
             if (Player1.LadoActual == Visualizacion.Lado.Der)
                 DatosPartida.LadoGanadaor = DatosPartida.Lados.Der;
             else
                 DatosPartida.LadoGanadaor = DatosPartida.Lados.Izq;
             //puntajes
-            DatosPartida.PtsGanador = Player1.Dinero;
-            DatosPartida.PtsPerdedor = Player2.Dinero;
+            DatosPartida.PtsGanador = Player1.Dinero.Value;
+            DatosPartida.PtsPerdedor = Player2.Dinero.Value;
         }
         else 
         {
@@ -150,8 +150,8 @@ public class GameManager : MonoBehaviour
                 DatosPartida.LadoGanadaor = DatosPartida.Lados.Izq;
 
             //puntajes
-            DatosPartida.PtsGanador = Player2.Dinero;
-            DatosPartida.PtsPerdedor = Player1.Dinero;
+            DatosPartida.PtsGanador = Player2.Dinero.Value;
+            DatosPartida.PtsPerdedor = Player1.Dinero.Value;
         }
 
         Player1.GetComponent<Frenado>().Frenar();

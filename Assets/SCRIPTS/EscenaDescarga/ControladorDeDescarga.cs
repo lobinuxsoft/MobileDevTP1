@@ -132,7 +132,7 @@ public class ControladorDeDescarga : MonoBehaviour
 		PEnMov = null;
 		Contador--;
 		
-		Pj.Dinero += (int)Bonus;
+		Pj.Dinero.Value += (uint)Bonus;
 		
 		if(Contador <= 0)
 		{

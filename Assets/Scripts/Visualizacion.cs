@@ -158,7 +158,7 @@ public class Visualizacion : MonoBehaviour
         }
 	}
 	
-	void SetDinero() => Dinero.text = PrepararNumeros(Pj.Dinero);
+	void SetDinero() => Dinero.text = PrepararNumeros(Pj.Dinero.Value);
 
     void SetTuto()
 	{
@@ -225,7 +225,7 @@ public class Visualizacion : MonoBehaviour
 		}
 	}
 	
-	public string PrepararNumeros(int dinero)
+	public string PrepararNumeros(uint dinero)
 	{
 		string strDinero = dinero.ToString();
 		string res = "";

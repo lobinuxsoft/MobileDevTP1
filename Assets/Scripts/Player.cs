@@ -1,8 +1,9 @@
 using UnityEngine;
+using CryingOnionTools.ScriptableVariables;
 
 public class Player : MonoBehaviour 
 {
-	public int Dinero = 0;
+	public UIntVariable Dinero;
 	public int IdPlayer = 0;
 	
 	public Bolsa[] Bolasas;
@@ -40,7 +41,7 @@ public class Player : MonoBehaviour
 		{
 			Bolasas[CantBolsAct] = b;
 			CantBolsAct++;
-			Dinero += (int)b.Monto;
+			Dinero.Value += (uint)b.Monto;
 			b.Desaparecer();
 			return true;
 		}
