@@ -186,12 +186,12 @@ public class TaxiComp : MonoBehaviour
 	
 	bool Medicion()
 	{
-		float dist1 = (GameManager.Instancia.Player1.transform.position - PosIni).magnitude;
-		float dist2 = (GameManager.Instancia.Player2.transform.position - PosIni).magnitude;
-		
-		if(dist1 > 4 && dist2 > 4)
-			return true;
-		else
-			return false;
+		foreach (var player in GameManager.Instancia.players)
+		{
+			if((player.transform.position - PosIni).magnitude <= 4)
+				return false;
+		}
+
+		return true;
 	}
 }

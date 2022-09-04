@@ -242,6 +242,17 @@
                 },
                 {
                     "name": "",
+                    "id": "24c6c9ae-037f-4a8f-a3ed-eb0c65715069",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "02394200-638f-4a89-ac10-b97b1e73c041",
                     "path": "<Keyboard>/escape",
                     "interactions": "",

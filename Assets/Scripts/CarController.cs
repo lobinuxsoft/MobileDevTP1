@@ -33,7 +33,7 @@ public class CarController : MonoBehaviour
     public void SetAcel(float val) => acel = val;
 
     public void TurnEnable() => turnAction.action.Enable();
-    public void TurenDisable() => turnAction.action.Disable();
+    public void TurnDisable() => turnAction.action.Disable();
 
     public void ResetTurn() => this.giro = 0f;
 

@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 370379180}
   - component: {fileID: 370379179}
   - component: {fileID: 370379183}
+  - component: {fileID: 370379184}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -663,6 +664,113 @@ MonoBehaviour:
   spriteP1Win: {fileID: 21300000, guid: c3d86ea90a1cd5449a861d39906d5d9a, type: 3}
   spriteP2Win: {fileID: 21300000, guid: 0a3b339c0051ccd4897e8fb9aaf36835, type: 3}
   fadeTime: 0.5
+--- !u!114 &370379184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370379178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 696115327d8022449a3ad98b4914d738,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6e38e07f-8d2d-42c9-b583-0f9c16ad29c2
+    m_ActionName: Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 84d5e8e6-e4ec-403c-b68d-7c7449788fb5
+    m_ActionName: Player2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f04b3c8b-5f9e-40a5-9648-14c469cbc838
+    m_ActionName: GameManager/Reset[/Keyboard/0]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 370379183}
+        m_TargetAssemblyTypeName: GameOverUI, Assembly-CSharp
+        m_MethodName: ToMainMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 00cf0d25-4ffa-495c-a330-15a27ccba775
+    m_ActionName: GameManager/Skip[/Keyboard/9]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 370379183}
+        m_TargetAssemblyTypeName: GameOverUI, Assembly-CSharp
+        m_MethodName: QuitApplication
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0face81e-0383-4788-a43e-bc7aebebcfdd
+    m_ActionName: GameManager/Quit[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 392676d6-8277-4b52-8694-794481d07f23
+    m_ActionName: GameManager/Player1[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6ace547d-7953-4d0a-bd23-ec4bafffdb31
+    m_ActionName: GameManager/Player2[/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a73c4adb-fe55-4734-8a91-3758562b9356
+    m_ActionName: PalletP1/FirstStep[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5e3d8eb7-e260-42a2-9746-9badf80ddaab
+    m_ActionName: PalletP1/SecondStep[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f7c0d08-94d9-4d11-9f65-cf91e66a241b
+    m_ActionName: PalletP1/ThirdStep[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c530d898-479f-4787-ab64-4263b2b489a0
+    m_ActionName: PalletP2/FirstStep[/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a31e0a56-f876-4f78-a6ee-81067d676bcf
+    m_ActionName: PalletP2/SecondStep[/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 63336196-b5bc-4720-afd4-8ad18a2db42c
+    m_ActionName: PalletP2/ThirdStep[/Keyboard/rightArrow]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: GameManager
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &566096572
 GameObject:
   m_ObjectHideFlags: 0

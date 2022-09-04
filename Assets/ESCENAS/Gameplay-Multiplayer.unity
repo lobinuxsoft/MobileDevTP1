@@ -33007,13 +33007,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3103}
-  m_LocalRotation: {x: 0.15084077, y: 0.00000008010077, z: -0.000000012311688, w: 0.9885581}
+  m_LocalRotation: {x: 0.15083809, y: 0, z: 0, w: 0.98855853}
   m_LocalPosition: {x: 6.4324074, y: 8.213354, z: 5091.724}
   m_LocalScale: {x: 2.3521168, y: 2.3521166, z: 2.352116}
   m_Children: []
   m_Father: {fileID: 1471600240}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 17.351, y: 0, z: 0}
 --- !u!4 &6257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4827866222774608, guid: b81b1a58a0f14c9439cbdd014e695f71,
@@ -75865,36 +75865,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 3099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c8ccfbee54199948923d8705f53aea9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a517f26da3cb134cacde2efe45cb9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  strategy: {fileID: 11400000, guid: 6d44de28a9505ab40a4af161b98895aa, type: 2}
   TiempoDeJuego: 60
   EstAct: 0
-  Player1: {fileID: 13058}
-  Player2: {fileID: 27660010}
+  TiempEspMuestraPts: 1
+  ConteoParaInicion: 3
   ConteoPosEsc:
     serializedVersion: 2
     x: 0
     y: 0
     width: 0
     height: 0
-  ConteoParaInicion: 3
   ConteoInicio: {fileID: 11471493}
   TiempoDeJuegoText: {fileID: 1222576993}
-  TiempEspMuestraPts: 1
-  PosCamionesCarrera:
-  - {x: -17.5, y: 1, z: 5243}
-  - {x: -4.2, y: 1, z: 5243}
-  PosCamion1Tuto: {x: 11.5, y: 6004.3, z: 5014.5}
-  PosCamion2Tuto: {x: -257.3, y: 6004.3, z: 5014.5}
-  ObjsCalibracion1:
-  - {fileID: 3073}
-  ObjsCalibracion2:
-  - {fileID: 3092}
+  ObjsCalibracion:
+  - {fileID: 3117}
+  - {fileID: 2683}
+  players:
+  - {fileID: 13058}
+  - {fileID: 27660010}
   ObjsCarrera:
   - {fileID: 3124}
   - {fileID: 3102}
   - {fileID: 213}
+  PosCamionesCarrera:
+  - {x: -17.5, y: 1, z: 5243}
+  - {x: -4.2, y: 1, z: 5243}
 --- !u!1001 &13083
 PrefabInstance:
   m_ObjectHideFlags: 0
