@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1137768970, guid: 4c2cacbfc56c8de489561d17dca22956, type: 3}
-  m_Name: Dificulty
+  m_Script: {fileID: 11500000, guid: d83f4f2747f2a5048b88f619abdd3301, type: 3}
+  m_Name: Singleplayer Strategy
   m_EditorClassIdentifier: 
-  value: 1
-  redeableFile: 0
-  fileExtention: .save

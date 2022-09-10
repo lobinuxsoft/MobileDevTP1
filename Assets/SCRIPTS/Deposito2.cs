@@ -78,8 +78,8 @@ public class Deposito2 : MonoBehaviour
 	public void Entro()
 	{		
 		if(PjActual.IdPlayer == 0)
-			Contr1.Activar(this);
+			if(Contr1) Contr1.Activar(this);
 		else
-			Contr2.Activar(this);
+			if(Contr2) Contr2.Activar(this);
 	}
 }
