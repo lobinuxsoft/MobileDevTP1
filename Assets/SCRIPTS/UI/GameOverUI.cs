@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using CryingOnionTools.ScriptableVariables;
 using UnityEngine.InputSystem;
 using System.Globalization;
+using CryingOnionTools.AudioTools;
 
 public class GameOverUI : MonoBehaviour
 {
@@ -16,10 +17,16 @@ public class GameOverUI : MonoBehaviour
     [SerializeField] private Sprite spriteP1Win;
     [SerializeField] private Sprite spriteP2Win;
     [SerializeField] private float fadeTime = 0.5f;
+    [SerializeField] AudioClip congratsSfx;
+    [SerializeField] AudioClip confirmSfx;
 
     private bool p1Win;
     private float onTime;
     private bool upperTime;
+
+    private SimpleSFXRequest sfxRequest;
+
+    private void Awake() => sfxRequest = GetComponent<SimpleSFXRequest>();
 
     void Start()
     {
@@ -29,6 +36,8 @@ public class GameOverUI : MonoBehaviour
         p1Win = moneyP1.Value > moneyP2.Value;
 
         playerWinner.sprite = p1Win ? spriteP1Win : spriteP2Win;
+
+        sfxRequest.PlaySFX(congratsSfx);
     }
 
     void Update()
@@ -58,6 +67,7 @@ public class GameOverUI : MonoBehaviour
 
     public void ToMainMenu()
     {
+        sfxRequest.PlaySFX(confirmSfx);
         moneyP1.EraseData();
         moneyP2.EraseData();
         SceneManager.LoadScene("MainMenu");

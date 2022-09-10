@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 using System.Collections;
 using UnityEngine.InputSystem;
+using CryingOnionTools.AudioTools;
 
 public class GameManager : MonoBehaviour 
 {
@@ -17,7 +18,10 @@ public class GameManager : MonoBehaviour
     public EstadoJuego EstAct = EstadoJuego.Calibrando;
 
     public float TiempEspMuestraPts = 3;
-    public float ConteoParaInicion = 3;
+    public int ConteoParaInicion = 3;
+    [SerializeField] AudioClip hurrySfx;
+    [SerializeField] AudioClip timeOverSfx;
+    [SerializeField] AudioClip[] sfxCount;
 
     public Rect ConteoPosEsc;
     public Text ConteoInicio;
@@ -34,13 +38,23 @@ public class GameManager : MonoBehaviour
 
     bool ConteoRegresivo = true;
 
+    SimpleSFXRequest simpleSFX;
+    Coroutine countDownRutine = null;
+    Coroutine hurryRoutine = null;
+
     //posiciones de los camiones dependientes del lado que les toco en la pantalla
     //la pos 0 es para la izquierda y la 1 para la derecha
     public Vector3[] PosCamionesCarrera = new Vector3[2];
 
-    void Awake() => GameManager.Instancia = this;
+    void Awake()
+    {
+        GameManager.Instancia = this;
 
-    IEnumerator Start() {
+        simpleSFX = GetComponent<SimpleSFXRequest>();
+    }
+
+    IEnumerator Start()
+    {
         yield return null;
         IniciarTutorial();
     }
@@ -55,31 +69,21 @@ public class GameManager : MonoBehaviour
                     FinalizarCarrera();
                 }
 
-                if (ConteoRegresivo) {
-                    ConteoParaInicion -= T.GetDT();
-                    if (ConteoParaInicion < 0) {
-                        EmpezarCarrera();
-                        ConteoRegresivo = false;
-                    }
-                }
-                else {
+                if (!ConteoRegresivo)
+                {
                     //baja el tiempo del juego
                     TiempoDeJuego -= T.GetDT();
+                    TiempoDeJuegoText.text = TiempoDeJuego.ToString("00");
+
+                    if (TiempoDeJuego < 15 && hurryRoutine == null)
+                        hurryRoutine = StartCoroutine(HurryRoutine());
+                        
                 }
-
-                if (ConteoRegresivo) {
-                    if (ConteoParaInicion > 1) {
-                        ConteoInicio.text = ConteoParaInicion.ToString("0");
-                    }
-                    else
-                    {
-                        ConteoInicio.text = "GO";
-                    }
+                else
+                {
+                    if (countDownRutine == null)
+                        countDownRutine = StartCoroutine(CountDownRoutine(ConteoParaInicion));
                 }
-
-                ConteoInicio.gameObject.SetActive(ConteoRegresivo);
-
-                TiempoDeJuegoText.text = TiempoDeJuego.ToString("00");
 
                 break;
 
@@ -108,6 +112,7 @@ public class GameManager : MonoBehaviour
 
     void FinalizarCarrera()
     {
+        StartCoroutine(TimeOverRoutine());
         EstAct = GameManager.EstadoJuego.Finalizado;
 
         TiempoDeJuego = 0;
@@ -129,6 +134,36 @@ public class GameManager : MonoBehaviour
     {
         if (strategy.EndCalibration(playerID, players))
             CambiarACarrera();
+    }
+
+    IEnumerator CountDownRoutine(int duration)
+    {
+        ConteoInicio.gameObject.SetActive(true);
+        while (duration > 0)
+        {
+            simpleSFX.PlaySFX(sfxCount[duration]);
+            ConteoInicio.text = duration.ToString("0");
+            yield return new WaitForSeconds(1);
+            duration--;
+        }
+
+        simpleSFX.PlaySFX(sfxCount[duration]);
+        ConteoInicio.text = "GO";
+        EmpezarCarrera();
+        ConteoRegresivo = false;
+        ConteoInicio.gameObject.SetActive(false);
+    }
+
+    IEnumerator HurryRoutine()
+    {
+        simpleSFX.PlaySFX(hurrySfx);
+        yield return new WaitForEndOfFrame();
+    }
+
+    IEnumerator TimeOverRoutine()
+    {
+        simpleSFX.PlaySFX(timeOverSfx);
+        yield return new WaitForEndOfFrame();
     }
 
     public void SelectPlayerByID(int index) => players[index].Seleccionado = true;
