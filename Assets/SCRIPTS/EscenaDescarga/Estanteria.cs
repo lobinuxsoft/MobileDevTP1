@@ -1,9 +1,8 @@
 using UnityEngine;
-using System.Collections;
 
 public class Estanteria : ManejoPallets
 {	
-	public Cinta CintaReceptora;//cinta que debe recibir la bolsa
+	public Cinta CintaReceptora;	//cinta que debe recibir la bolsa
 	public Pallet.Valores Valor;
 	PilaPalletMng Contenido;
 	public bool Anim = false;
@@ -16,8 +15,6 @@ public class Estanteria : ManejoPallets
 	public GameObject ModelSuelo;
 	public Color32 ColorParpadeo;
 	Color32 ColorOrigModel;
-	
-	//--------------------------------//	
 	
 	void Start () 
 	{
@@ -59,8 +56,6 @@ public class Estanteria : ManejoPallets
 		}
 	}
 	
-	//------------------------------------------------------------//
-	
 	public override void Dar(ManejoPallets receptor)
 	{
         if (Tenencia()) {
@@ -74,7 +69,6 @@ public class Estanteria : ManejoPallets
                     Pallets.RemoveAt(0);
                     Contenido.Sacar();
                     ApagarAnim();
-                    //Debug.Log("pallet entregado a Mano de Estanteria");
                 }
             }
         }

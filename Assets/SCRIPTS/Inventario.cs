@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class Inventario : MonoBehaviour 
 {
@@ -15,29 +14,17 @@ public class Inventario : MonoBehaviour
 	public int Fil = 0;
 	public int Col = 0;
 	
-	public Texture2D TexturaVacia;//lo que aparece si no hay ninguna bolsa
+	public Texture2D TexturaVacia;	//lo que aparece si no hay ninguna bolsa
 	public Texture2D TextFondo;
 	
 	Rect R;
 	public GUISkin GS;
 	
-	//------------------------------------------------------------------//
-	
 	// Use this for initialization
-	void Start () 
+	void Start () => Pj = GetComponent<Player>();
+
+    void OnGUI()
 	{
-		Pj = GetComponent<Player>();
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
-	
-	void OnGUI()
-	{
-		
 		switch(Pj.EstAct)
 		{
 		case Player.Estados.EnConduccion:
@@ -62,7 +49,7 @@ public class Inventario : MonoBehaviour
 					R.x = SlotPrimPos.x * Screen.width / 100 + Separacion.x * i * Screen.width / 100;
 					R.y = SlotPrimPos.y * Screen.height / 100 + Separacion.y * j * Screen.height / 100;
 					
-					if(contador < Pj.Bolasas.Length )//&& Pj.Bolasas[contador] != null)
+					if(contador < Pj.Bolasas.Length )	//&& Pj.Bolasas[contador] != null)
 					{
 						if(Pj.Bolasas[contador]!=null)
 							GS.box.normal.background = Pj.Bolasas[contador].ImagenInventario;
@@ -82,9 +69,5 @@ public class Inventario : MonoBehaviour
 			GUI.skin = null;
 				break;
 		}
-		
-		
 	}
-	
-	//------------------------------------------------------------------//
 }

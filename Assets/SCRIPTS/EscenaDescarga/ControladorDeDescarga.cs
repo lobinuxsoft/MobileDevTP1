@@ -1,17 +1,15 @@
 using UnityEngine;
-using System.Collections;
+using UnityEngine.Events;
 
 public class ControladorDeDescarga : MonoBehaviour 
-{
-	System.Collections.Generic.List<Pallet.Valores> Ps = new System.Collections.Generic.List<Pallet.Valores>();
-	
+{	
 	int Contador = 0;
 	
 	Deposito2 Dep;
 	
-	public GameObject[] Componentes;//todos los componentes que debe activar en esta escena
+	public GameObject[] Componentes;	//todos los componentes que debe activar en esta escena
 	
-	public Player Pj;//jugador
+	public Player Pj;	//jugador
 	MeshCollider CollCamion;
 	
 	public Pallet PEnMov = null;
@@ -38,15 +36,15 @@ public class ControladorDeDescarga : MonoBehaviour
 	
 	public AnimMngDesc ObjAnimado;
 
-	
-	//--------------------------------------------------------------//
+	public UnityEvent onDeschargeStart;
+	public UnityEvent onDeschargeEnd;
 
 	// Use this for initialization
 	void Start () 
 	{
 		for (int i = 0; i < Componentes.Length; i++)
 		{
-			Componentes[i].SetActiveRecursively(false);
+			Componentes[i].SetActive(false);
 		}
 		
 		CollCamion = Pj.GetComponentInChildren<MeshCollider>();
@@ -71,27 +69,25 @@ public class ControladorDeDescarga : MonoBehaviour
 				Bonus = 0;
 			}		
 		}
-		
-		
 	}
 	
-	//--------------------------------------------------------------//
 			
 	public void Activar(Deposito2 d)
 	{
+		onDeschargeStart?.Invoke();
+
 		Dep = d;//recibe el deposito para que sepa cuando dejarlo ir al camion
-		CamaraConduccion.SetActiveRecursively(false);//apaga la camara de conduccion
+		CamaraConduccion.SetActive(false);//apaga la camara de conduccion
 			
 		//activa los componentes
 		for (int i = 0; i < Componentes.Length; i++)
 		{
-			Componentes[i].SetActiveRecursively(true);
+			Componentes[i].SetActive(true);
 		}
 		
 			
 		CollCamion.enabled = false;
 		Pj.CambiarADescarga();
-		
 		
 		GameObject go;
 		//asigna los pallets a las estanterias
@@ -120,9 +116,9 @@ public class ControladorDeDescarga : MonoBehaviour
 				}
 			}
 		}
+
 		//animacion
 		ObjAnimado.Entrar();
-		
 	}
 	
 	//cuando sale de un estante
@@ -131,7 +127,6 @@ public class ControladorDeDescarga : MonoBehaviour
 		PEnMov = p;
 		TempoBonus = p.Tiempo;
 		Pj.SacarBolasa();
-		//inicia el contador de tiempo para el bonus
 	}
 	
 	//cuando llega a la cinta
@@ -143,7 +138,7 @@ public class ControladorDeDescarga : MonoBehaviour
 		PEnMov = null;
 		Contador--;
 		
-		Pj.Dinero += (int)Bonus;
+		Pj.Dinero.Value += (uint)Bonus;
 		
 		if(Contador <= 0)
 		{
@@ -154,49 +149,45 @@ public class ControladorDeDescarga : MonoBehaviour
 			Est2.EncenderAnim();
 		}
 	}
-	
-	public void FinDelJuego()
+
+    /// <summary>
+    /// metodo llamado por el GameManager para avisar que se termino el juego
+    /// </summary>
+    public void FinDelJuego()
 	{
-		//metodo llamado por el GameManager para avisar que se termino el juego
-		
-		//desactiva lo que da y recibe las bolsas para que no halla mas flujo de estas
 		Est2.enabled = false;
 		Cin2.enabled = false;
 	}
-	
+
 	void Finalizacion()
-	{
+	{ 
+		onDeschargeEnd?.Invoke();
 		ObjAnimado.Salir();
 	}
-	
-	public Pallet GetPalletEnMov()
+
+    public Pallet GetPalletEnMov() => PEnMov;
+
+    /// <summary>
+    /// avisa cuando termino la animacion para que prosiga el juego
+    /// </summary>
+    public void FinAnimEntrada() => Est2.EncenderAnim();
+
+    /// <summary>
+    /// avisa cuando termino la animacion para que prosiga el juego
+    /// </summary>
+    public void FinAnimSalida()
 	{
-		return PEnMov;
-	}
-	
-	public void FinAnimEntrada()
-	{
-		//avisa cuando termino la animacion para que prosiga el juego
-		Est2.EncenderAnim();
-	}
-	
-	public void FinAnimSalida()
-	{
-		//avisa cuando termino la animacion para que prosiga el juego
-		
 		for (int i = 0; i < Componentes.Length; i++)
 		{
-			Componentes[i].SetActiveRecursively(false);
+			Componentes[i].SetActive(false);
 		}
 		
-		CamaraConduccion.SetActiveRecursively(true);
+		CamaraConduccion.SetActive(true);
 		
 		CollCamion.enabled = true;
 		
 		Pj.CambiarAConduccion();
 		
 		Dep.Soltar();
-		
 	}
-	
 }

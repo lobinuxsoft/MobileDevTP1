@@ -1,23 +1,13 @@
 using UnityEngine;
-using System.Collections;
 
 public class VeredaRespawn : MonoBehaviour 
 {
 	public string PlayerTag = "Player";
 
 	// Use this for initialization
-	void Start () 
-	{
-		GetComponent<Renderer>().enabled = false;
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
-	
-	void OnTriggerEnter(Collider other)
+	void Start () => GetComponent<Renderer>().enabled = false;
+
+    void OnTriggerEnter(Collider other)
 	{
 		if(other.tag == PlayerTag)
 		{
@@ -32,5 +22,4 @@ public class VeredaRespawn : MonoBehaviour
 			collision.gameObject.GetComponent<Respawn>().Respawnear();
 		}
 	}
-	
 }

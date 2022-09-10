@@ -1,10 +1,9 @@
 using UnityEngine;
-using System.Collections;
 
 public class PantallaCalibTuto : MonoBehaviour 
 {
 	public Texture2D[] ImagenesDelTuto;
-	public float Intervalo = 1.2f;//tiempo de cada cuanto cambia de imagen
+	public float Intervalo = 1.2f;	//tiempo de cada cuanto cambia de imagen
 	float TempoIntTuto = 0;
 	int EnCursoTuto = 0;
 	
@@ -15,12 +14,6 @@ public class PantallaCalibTuto : MonoBehaviour
 	public Texture2D ImaReady;
 	
 	public ContrCalibracion ContrCalib;
-
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
 	
 	// Update is called once per frame
 	void Update () 
@@ -39,7 +32,6 @@ public class PantallaCalibTuto : MonoBehaviour
 					EnCursoCalib = 0;
 			}
 			GetComponent<Renderer>().material.mainTexture = ImagenesDeCalib[EnCursoCalib];
-			
 			break;
 			
 		case ContrCalibracion.Estados.Tutorial:
@@ -54,16 +46,12 @@ public class PantallaCalibTuto : MonoBehaviour
 					EnCursoTuto = 0;
 			}
 			GetComponent<Renderer>().material.mainTexture = ImagenesDelTuto[EnCursoTuto];
-			
 			break;
 			
 		case ContrCalibracion.Estados.Finalizado:
 			//esperando al otro jugador		
 			GetComponent<Renderer>().material.mainTexture = ImaReady;
-			
 			break;
 		}
-			
-			
 	}
 }

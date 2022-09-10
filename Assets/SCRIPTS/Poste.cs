@@ -1,12 +1,7 @@
-using UnityEngine;
-using System.Collections;
-
 public class Poste : ReductorVelColl 
 {
-
-	public override void Chocado ()
-	{
-		//lo que sea que haga, desaparecer, explotar, sonido, etc
-		base.Chocado();
-	}
+    /// <summary>
+    /// lo que sea que haga, desaparecer, explotar, sonido, etc
+    /// </summary>
+    public override void Chocado () => base.Chocado();
 }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class Obstaculo : MonoBehaviour 
 {
@@ -12,12 +11,6 @@ public class Obstaculo : MonoBehaviour
 	
 	bool Chocado = false;
 	bool Desapareciendo = false;
-
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
 	
 	// Update is called once per frame
 	void Update () 
@@ -41,7 +34,7 @@ public class Obstaculo : MonoBehaviour
 			Tempo2 += T.GetDT();
 			if(Tempo2 > TiempDesapareciendo)
 			{
-				gameObject.SetActiveRecursively(false);
+				gameObject.SetActive(false);
 			}
 		}
 	}
@@ -54,11 +47,7 @@ public class Obstaculo : MonoBehaviour
 		}
 	}
 	
-	//------------------------------------------------//
+	protected virtual void Desaparecer() { }
 	
-	protected virtual void Desaparecer()
-	{}
-	
-	protected virtual void Colision()
-	{}
+	protected virtual void Colision() { }
 }
