@@ -72589,8 +72589,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   Vacio: 1
-  Contr1: {fileID: 0}
-  Contr2: {fileID: 0}
+  Contr1: {fileID: 13064}
+  Contr2: {fileID: 13068}
 --- !u!114 &12706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72605,8 +72605,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   Vacio: 1
-  Contr1: {fileID: 0}
-  Contr2: {fileID: 0}
+  Contr1: {fileID: 13064}
+  Contr2: {fileID: 13068}
 --- !u!114 &12707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72739,8 +72739,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   Vacio: 1
-  Contr1: {fileID: 0}
-  Contr2: {fileID: 0}
+  Contr1: {fileID: 13064}
+  Contr2: {fileID: 13068}
 --- !u!114 &12724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72755,8 +72755,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   Vacio: 1
-  Contr1: {fileID: 0}
-  Contr2: {fileID: 0}
+  Contr1: {fileID: 13064}
+  Contr2: {fileID: 13068}
 --- !u!114 &12725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73007,8 +73007,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   Vacio: 1
-  Contr1: {fileID: 0}
-  Contr2: {fileID: 0}
+  Contr1: {fileID: 13064}
+  Contr2: {fileID: 13068}
 --- !u!114 &12742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73023,8 +73023,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   Vacio: 1
-  Contr1: {fileID: 0}
-  Contr2: {fileID: 0}
+  Contr1: {fileID: 13064}
+  Contr2: {fileID: 13068}
 --- !u!114 &12743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73157,8 +73157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   Vacio: 1
-  Contr1: {fileID: 0}
-  Contr2: {fileID: 0}
+  Contr1: {fileID: 13064}
+  Contr2: {fileID: 13068}
 --- !u!114 &12773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73173,8 +73173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   Vacio: 1
-  Contr1: {fileID: 0}
-  Contr2: {fileID: 0}
+  Contr1: {fileID: 13064}
+  Contr2: {fileID: 13068}
 --- !u!114 &12841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73189,8 +73189,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   Vacio: 1
-  Contr1: {fileID: 0}
-  Contr2: {fileID: 0}
+  Contr1: {fileID: 13064}
+  Contr2: {fileID: 13068}
 --- !u!114 &12903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73552,8 +73552,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   Vacio: 1
-  Contr1: {fileID: 0}
-  Contr2: {fileID: 0}
+  Contr1: {fileID: 13064}
+  Contr2: {fileID: 13068}
 --- !u!114 &13023
 MonoBehaviour:
   m_ObjectHideFlags: 0

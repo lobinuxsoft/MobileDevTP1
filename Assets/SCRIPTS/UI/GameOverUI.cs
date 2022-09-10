@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using CryingOnionTools.ScriptableVariables;
 using UnityEngine.InputSystem;
-using System.Globalization;
 using CryingOnionTools.AudioTools;
 
 public class GameOverUI : MonoBehaviour

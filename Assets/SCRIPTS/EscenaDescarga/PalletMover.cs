@@ -32,6 +32,20 @@ public class PalletMover : ManejoPallets
         thirdStepAction.action.performed -= ThirdStepPallet;
     }
 
+    private void OnEnable()
+    {
+        firstStepAction.action.performed += FirstStepPallet;
+        secondStepAction.action.performed += SecondStepPallet;
+        thirdStepAction.action.performed += ThirdStepPallet;
+    }
+
+    private void OnDisable()
+    {
+        firstStepAction.action.performed -= FirstStepPallet;
+        secondStepAction.action.performed -= SecondStepPallet;
+        thirdStepAction.action.performed -= ThirdStepPallet;
+    }
+
     void PrimerPaso() {
         Desde.Dar(this);
         segundoCompleto = false;

@@ -13,13 +13,7 @@ public class Deposito2 : MonoBehaviour
 	
 	//----------------------------------------------//
 
-	void Start () 
-	{
-		Contr1 = GameObject.Find("ContrDesc1").GetComponent<ControladorDeDescarga>();
-		Contr2 = GameObject.Find("ContrDesc2").GetComponent<ControladorDeDescarga>();
-		
-		Physics.IgnoreLayerCollision(8,9,false);
-	}
+	void Start () => Physics.IgnoreLayerCollision(8,9,false);
 	
 	// Update is called once per frame
 	void Update () 
@@ -79,6 +73,6 @@ public class Deposito2 : MonoBehaviour
 		if(PjActual.IdPlayer == 0)
 			Contr1.Activar(this);
 		else
-			Contr2.Activar(this);
+            Contr2.Activar(this);
 	}
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,6 +57,8 @@ public class Visualizacion : MonoBehaviour
 		carController = GetComponent<CarController>();
 		Pj = GetComponent<Player>();
 		Pj.Dinero.onValueChange += OnMoneyChange;
+
+		enableInPlayerStates = enableInPlayerStates.Where(x => x != null).ToArray();
     }
 
 	private void OnDestroy() => Pj.Dinero.onValueChange -= OnMoneyChange;
@@ -91,7 +94,7 @@ public class Visualizacion : MonoBehaviour
 		CamConduccion.enabled = false;
 		CamDescarga.enabled = false;
 
-        Array.ForEach(enableInPlayerStates, e => e.SetPlayerState(Pj.EstAct));
+        Array.ForEach(enableInPlayerStates.ToArray(), e => e.SetPlayerState(Pj.EstAct));
     }
 	
 	public void CambiarAConduccion()
@@ -100,7 +103,7 @@ public class Visualizacion : MonoBehaviour
 		CamConduccion.enabled = true;
 		CamDescarga.enabled = false;
 
-        Array.ForEach(enableInPlayerStates, e => e.SetPlayerState(Pj.EstAct));
+        Array.ForEach(enableInPlayerStates.ToArray(), e => e.SetPlayerState(Pj.EstAct));
     }
 	
 	public void CambiarADescarga()
@@ -109,7 +112,7 @@ public class Visualizacion : MonoBehaviour
 		CamConduccion.enabled = false;
 		CamDescarga.enabled = true;
 
-        Array.ForEach(enableInPlayerStates, e => e.SetPlayerState(Pj.EstAct));
+        Array.ForEach(enableInPlayerStates.ToArray(), e => e.SetPlayerState(Pj.EstAct));
     }
 	
 	public void SetLado(Lado lado)
