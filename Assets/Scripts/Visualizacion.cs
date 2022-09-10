@@ -55,18 +55,19 @@ public class Visualizacion : MonoBehaviour
 	{
 		carController = GetComponent<CarController>();
 		Pj = GetComponent<Player>();
+		Pj.Dinero.onValueChange += OnMoneyChange;
     }
-	
-	// Update is called once per frame
-	void Update () 
-	{
-        switch (Pj.EstAct) {
 
+	private void OnDestroy() => Pj.Dinero.onValueChange -= OnMoneyChange;
+
+    // Update is called once per frame
+    void Update () 
+	{
+        switch (Pj.EstAct)
+		{
             case Player.Estados.EnConduccion:
                 //inventario
                 SetInv();
-                //contador de dinero
-                SetDinero();
                 //el volante
                 SetVolante();
                 break;
@@ -76,8 +77,6 @@ public class Visualizacion : MonoBehaviour
                 SetInv();
                 //el bonus
                 SetBonus();
-                //contador de dinero
-                SetDinero();
                 break;
 
             case Player.Estados.EnTutorial:
@@ -157,8 +156,8 @@ public class Visualizacion : MonoBehaviour
             BonusRoot.SetActive(false);
         }
 	}
-	
-	void SetDinero() => Dinero.text = PrepararNumeros(Pj.Dinero.Value);
+
+	private void OnMoneyChange(uint value) => Dinero.text = PrepararNumeros(value);
 
     void SetTuto()
 	{
@@ -201,10 +200,12 @@ public class Visualizacion : MonoBehaviour
 				contador++;
 		}
 
-        if(contador >= 3) {
+        if(contador >= 3)
+		{
 			TempParp += T.GetDT();
 
-			if(TempParp >= Parpadeo) {
+			if(TempParp >= Parpadeo)
+			{
 				TempParp = 0;
 				if(PrimIma)
 					PrimIma = false;
@@ -212,15 +213,18 @@ public class Visualizacion : MonoBehaviour
 					PrimIma = true;
 
 
-				if(PrimIma) {
+				if(PrimIma)
+				{
 					Inventario.sprite = InvSprites[3];
 				}
-				else {
+				else
+				{
 					Inventario.sprite = InvSprites[4];
 				}
 			}
 		}
-        else {
+        else
+		{
 			Inventario.sprite = InvSprites[contador];
 		}
 	}

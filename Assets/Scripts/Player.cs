@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
 
 	void Start () 
 	{
+		Dinero.Value = 0;
+
 		for(int i = 0; i< Bolasas.Length;i++)
 			Bolasas[i] = null;
 		
