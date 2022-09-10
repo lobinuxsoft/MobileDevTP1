@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: -1291820697, guid: 4c2cacbfc56c8de489561d17dca22956, type: 3}
   m_Name: Score P1
   m_EditorClassIdentifier: 
-  value: 1000000
+  value: 0
   redeableFile: 0
   fileExtention: .save
