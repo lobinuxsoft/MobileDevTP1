@@ -12,13 +12,15 @@ public class CarController : MonoBehaviour
     float giro = 0f;
     float acel = 1f;
 
-    private void Update()
+#if !UNITY_ANDROID
+    private void LateUpdate()
     {
         if (turnAction.action.enabled)
             giro = turnAction.action.ReadValue<Vector2>().x;
         else
             giro = 0f;
     }
+#endif
 
     // Update is called once per frame
     void FixedUpdate () {
@@ -36,6 +38,8 @@ public class CarController : MonoBehaviour
     public void TurnDisable() => turnAction.action.Disable();
 
     public void ResetTurn() => this.giro = 0f;
+
+    public void SetTurn(Vector2 value) => giro = value.x;
 
     public float GetTurn() => this.giro;
 }

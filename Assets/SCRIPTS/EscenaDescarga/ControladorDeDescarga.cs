@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ControladorDeDescarga : MonoBehaviour 
 {	
@@ -35,6 +36,9 @@ public class ControladorDeDescarga : MonoBehaviour
 	
 	public AnimMngDesc ObjAnimado;
 
+	public UnityEvent onDeschargeStart;
+	public UnityEvent onDeschargeEnd;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -70,6 +74,8 @@ public class ControladorDeDescarga : MonoBehaviour
 			
 	public void Activar(Deposito2 d)
 	{
+		onDeschargeStart?.Invoke();
+
 		Dep = d;//recibe el deposito para que sepa cuando dejarlo ir al camion
 		CamaraConduccion.SetActive(false);//apaga la camara de conduccion
 			
@@ -152,8 +158,12 @@ public class ControladorDeDescarga : MonoBehaviour
 		Est2.enabled = false;
 		Cin2.enabled = false;
 	}
-	
-	void Finalizacion() => ObjAnimado.Salir();
+
+	void Finalizacion()
+	{ 
+		onDeschargeEnd?.Invoke();
+		ObjAnimado.Salir();
+	}
 
     public Pallet GetPalletEnMov() => PEnMov;
 
