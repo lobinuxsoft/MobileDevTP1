@@ -77971,6 +77971,7 @@ GameObject:
   - component: {fileID: 243199808}
   - component: {fileID: 243199807}
   - component: {fileID: 243199806}
+  - component: {fileID: 243199810}
   m_Layer: 5
   m_Name: Android P2 Canvas
   m_TagString: Untagged
@@ -78074,6 +78075,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &243199810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243199804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193366d5ef6aecd4da3b41a2e6490e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &249334430
 GameObject:
   m_ObjectHideFlags: 0
@@ -79324,6 +79337,7 @@ GameObject:
   - component: {fileID: 715260903}
   - component: {fileID: 715260902}
   - component: {fileID: 715260905}
+  - component: {fileID: 715260906}
   m_Layer: 5
   m_Name: Android P1 Canvas
   m_TagString: Untagged
@@ -79428,6 +79442,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MisEstados: 02000000
+--- !u!114 &715260906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715260900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193366d5ef6aecd4da3b41a2e6490e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &745517879
 GameObject:
   m_ObjectHideFlags: 0
@@ -79441,6 +79467,7 @@ GameObject:
   - component: {fileID: 745517883}
   - component: {fileID: 745517882}
   - component: {fileID: 745517881}
+  - component: {fileID: 745517885}
   m_Layer: 5
   m_Name: Android P1 Canvas
   m_TagString: Untagged
@@ -79544,6 +79571,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &745517885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745517879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193366d5ef6aecd4da3b41a2e6490e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &750245514 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114630957717379974, guid: b81b1a58a0f14c9439cbdd014e695f71,
@@ -82797,6 +82836,7 @@ GameObject:
   - component: {fileID: 2015806914}
   - component: {fileID: 2015806913}
   - component: {fileID: 2015806916}
+  - component: {fileID: 2015806917}
   m_Layer: 5
   m_Name: Android P2 Canvas
   m_TagString: Untagged
@@ -82901,6 +82941,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MisEstados: 02000000
+--- !u!114 &2015806917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015806911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193366d5ef6aecd4da3b41a2e6490e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2091210710
 GameObject:
   m_ObjectHideFlags: 0
