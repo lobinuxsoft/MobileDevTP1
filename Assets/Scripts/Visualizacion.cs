@@ -12,7 +12,7 @@ public class Visualizacion : MonoBehaviour
 	public enum Lado{Izq, Der}
 	public Lado LadoAct;
 	
-	ControlDireccion Direccion;
+	CarController carController;
 	Player Pj;
 
     public GameObject uiRoot;
@@ -53,20 +53,21 @@ public class Visualizacion : MonoBehaviour
     // Use this for initialization
     void Start () 
 	{
-		Direccion = GetComponent<ControlDireccion>();
+		carController = GetComponent<CarController>();
 		Pj = GetComponent<Player>();
+		Pj.Dinero.onValueChange += OnMoneyChange;
     }
-	
-	// Update is called once per frame
-	void Update () 
-	{
-        switch (Pj.EstAct) {
 
+	private void OnDestroy() => Pj.Dinero.onValueChange -= OnMoneyChange;
+
+    // Update is called once per frame
+    void Update () 
+	{
+        switch (Pj.EstAct)
+		{
             case Player.Estados.EnConduccion:
                 //inventario
                 SetInv();
-                //contador de dinero
-                SetDinero();
                 //el volante
                 SetVolante();
                 break;
@@ -76,8 +77,6 @@ public class Visualizacion : MonoBehaviour
                 SetInv();
                 //el bonus
                 SetBonus();
-                //contador de dinero
-                SetDinero();
                 break;
 
             case Player.Estados.EnTutorial:
@@ -157,8 +156,8 @@ public class Visualizacion : MonoBehaviour
             BonusRoot.SetActive(false);
         }
 	}
-	
-	void SetDinero() => Dinero.text = PrepararNumeros(Pj.Dinero);
+
+	private void OnMoneyChange(uint value) => Dinero.text = PrepararNumeros(value);
 
     void SetTuto()
 	{
@@ -186,7 +185,7 @@ public class Visualizacion : MonoBehaviour
 	
 	void SetVolante()
 	{
-		float angulo = - 45 * Direccion.GetGiro();
+		float angulo = - 45 * carController.GetTurn();
         Vector3 rot = volante.localEulerAngles;
         rot.z = angulo;
         volante.localEulerAngles = rot;
@@ -201,10 +200,12 @@ public class Visualizacion : MonoBehaviour
 				contador++;
 		}
 
-        if(contador >= 3) {
+        if(contador >= 3)
+		{
 			TempParp += T.GetDT();
 
-			if(TempParp >= Parpadeo) {
+			if(TempParp >= Parpadeo)
+			{
 				TempParp = 0;
 				if(PrimIma)
 					PrimIma = false;
@@ -212,20 +213,23 @@ public class Visualizacion : MonoBehaviour
 					PrimIma = true;
 
 
-				if(PrimIma) {
+				if(PrimIma)
+				{
 					Inventario.sprite = InvSprites[3];
 				}
-				else {
+				else
+				{
 					Inventario.sprite = InvSprites[4];
 				}
 			}
 		}
-        else {
+        else
+		{
 			Inventario.sprite = InvSprites[contador];
 		}
 	}
 	
-	public string PrepararNumeros(int dinero)
+	public string PrepararNumeros(uint dinero)
 	{
 		string strDinero = dinero.ToString();
 		string res = "";

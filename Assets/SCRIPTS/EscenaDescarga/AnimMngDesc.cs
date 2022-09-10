@@ -22,10 +22,10 @@ public class AnimMngDesc : MonoBehaviour
     // Update is called once per frame
     void Update () 
 	{
-		if(Input.GetKeyDown(KeyCode.Z))
-			Entrar();
-		if(Input.GetKeyDown(KeyCode.X))
-			Salir();
+		//if(Input.GetKeyDown(KeyCode.Z))
+		//	Entrar();
+		//if(Input.GetKeyDown(KeyCode.X))
+		//	Salir();
 		
 		switch(AnimAct)
 		{

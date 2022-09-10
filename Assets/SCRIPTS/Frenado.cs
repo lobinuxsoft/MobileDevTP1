@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Frenado : MonoBehaviour 
 {
@@ -17,12 +18,9 @@ public class Frenado : MonoBehaviour
 	//-----------------------------------------------------//
 	
 	// Use this for initialization
-	void Start () 
-	{
-		Frenar();
-	}
-	
-	void FixedUpdate ()
+	void Start () => Frenar();
+
+    void FixedUpdate ()
 	{
 		if(Frenando)
 		{
@@ -56,7 +54,7 @@ public class Frenado : MonoBehaviour
 	
 	public void Frenar()
 	{
-		GetComponent<ControlDireccion>().enabled = false;
+		//GetComponent<PlayerInput>().enabled = false;
 		gameObject.GetComponent<CarController>().SetAcel(0f);
         GetComponent<Rigidbody>().velocity = Vector3.zero;
 		
@@ -67,7 +65,7 @@ public class Frenado : MonoBehaviour
 	
 	public void RestaurarVel()
 	{
-		GetComponent<ControlDireccion>().enabled = true;
+		//GetComponent<PlayerInput>().enabled = true;
 		gameObject.GetComponent<CarController>().SetAcel(1f);
         Frenando = false;
 		Tempo = 0;
