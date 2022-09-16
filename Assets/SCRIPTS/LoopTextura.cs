@@ -1,18 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoopTextura : MonoBehaviour 
 {
 	public float Intervalo = 1;
 	float Tempo = 0;
-	
-	public Texture2D[] Imagenes;
+
+	public Image imageToRender;
+	public Sprite[] Imagenes;
 	int Contador = 0;
 
 	// Use this for initialization
 	void Start () 
 	{
 		if(Imagenes.Length > 0)
-			GetComponent<Renderer>().material.mainTexture = Imagenes[0];
+			imageToRender.sprite = Imagenes[0];
 	}
 	
 	// Update is called once per frame
@@ -28,7 +30,7 @@ public class LoopTextura : MonoBehaviour
 			{
 				Contador = 0;
 			}
-			GetComponent<Renderer>().material.mainTexture = Imagenes[Contador];
+            imageToRender.sprite = Imagenes[Contador];
 		}
 	}
 }
