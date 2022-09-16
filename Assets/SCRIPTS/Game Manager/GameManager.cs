@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.InputSystem;
 using CryingOnionTools.AudioTools;
+using TMPro;
 
 public class GameManager : MonoBehaviour 
 {
@@ -24,8 +25,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip[] sfxCount;
 
     public Rect ConteoPosEsc;
-    public Text ConteoInicio;
-    public Text TiempoDeJuegoText;
+    public TextMeshProUGUI ConteoInicio;
+    public TextMeshProUGUI TiempoDeJuegoText;
 
     //listas de GO que activa y desactiva por sub-escena
     //escena de tutorial

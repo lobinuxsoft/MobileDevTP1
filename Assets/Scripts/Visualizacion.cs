@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +26,7 @@ public class Visualizacion : MonoBehaviour
 	public Camera CamDescarga;
 
     //EL DINERO QUE SE TIENE
-    public Text Dinero;
+    public TextMeshProUGUI Dinero;
 	
 	//EL VOLANTE
 	public Transform volante;
@@ -41,7 +42,7 @@ public class Visualizacion : MonoBehaviour
 	//BONO DE DESCARGA
 	public GameObject BonusRoot;
 	public Image BonusFill;
-	public Text BonusText;
+	public TextMeshProUGUI BonusText;
 
 
     //CALIBRACION MAS TUTO BASICO
