@@ -1,6 +1,5 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using CryingOnionTools.ScriptableVariables;
 using UnityEngine.InputSystem;
@@ -69,7 +68,7 @@ public class GameOverUI : MonoBehaviour
         sfxRequest.PlaySFX(confirmSfx);
         moneyP1.EraseData();
         moneyP2.EraseData();
-        SceneManager.LoadScene("MainMenu");
+        TimelineUITransition.Instance.FadeStart("MainMenu");
     }
 
     public void ToMainMenu(InputAction.CallbackContext context)

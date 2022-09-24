@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class PauseMenuUI : MonoBehaviour
@@ -41,7 +40,6 @@ public class PauseMenuUI : MonoBehaviour
     public void ReturnToMainMenu()
     {
         HideMenu();
-
-        SceneManager.LoadScene(0);
+        TimelineUITransition.Instance.FadeStart("MainMenu");
     }
 }

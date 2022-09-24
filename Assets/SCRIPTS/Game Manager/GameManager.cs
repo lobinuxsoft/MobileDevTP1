@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     SimpleSFXRequest simpleSFX;
     Coroutine countDownRutine = null;
     Coroutine hurryRoutine = null;
+    Coroutine gameoverRoutine = null;
 
     //posiciones de los camiones dependientes del lado que les toco en la pantalla
     //la pos 0 es para la izquierda y la 1 para la derecha
@@ -94,7 +95,10 @@ public class GameManager : MonoBehaviour
 
                 TiempEspMuestraPts -= Time.deltaTime;
                 if (TiempEspMuestraPts <= 0)
-                    SceneManager.LoadScene("Gameover");
+                {
+                     TimelineUITransition.Instance.FadeStart("Gameover");
+                    this.enabled = false;
+                }
 
                 break;
         }
@@ -190,7 +194,7 @@ public class GameManager : MonoBehaviour
     public void ReLoadLevel(InputAction.CallbackContext context)
     {
         if (context.performed)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            TimelineUITransition.Instance.FadeStart(SceneManager.GetActiveScene().name);
     }
 
     public void CloseApplication(InputAction.CallbackContext context)

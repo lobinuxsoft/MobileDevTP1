@@ -1,6 +1,5 @@
 using CryingOnionTools.ScriptableVariables;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
@@ -29,14 +28,14 @@ public class MainMenuUI : MonoBehaviour
     {
         scoreP1.Value = 0;
         scoreP2.Value = 0;
-        SceneManager.LoadScene("Gameplay-Singleplayer");
+        TimelineUITransition.Instance.FadeStart("Gameplay-Singleplayer");
     }
 
     public void ToMultiPlayer()
     {
         scoreP1.Value = 0;
         scoreP2.Value = 0;
-        SceneManager.LoadScene("Gameplay-Multiplayer");
+        TimelineUITransition.Instance.FadeStart("Gameplay-Multiplayer");
     }
 
     public void QuitGame() => Application.Quit();
